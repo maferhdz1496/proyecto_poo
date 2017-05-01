@@ -70,6 +70,7 @@ public class Llanta {
          System.out.println("Iflando a nivel optimo"); 
          this.setPresion(150);
          return false;
+         //Nuevo cambio
      }
      }
    }
