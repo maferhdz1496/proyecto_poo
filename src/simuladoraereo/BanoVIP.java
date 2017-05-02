@@ -17,6 +17,15 @@ public class BanoVIP extends BanoMujeres {
         this.ocupado = ocupado;
     }
 
+    public boolean isEmbarazada() {
+        return embarazada;
+    }
+
+    public void setEmbarazada(boolean embarazada) {
+        this.embarazada = embarazada;
+    }
+
+    
     @Override
     public String toString() {
         return "\n\tBanoVIP" + 

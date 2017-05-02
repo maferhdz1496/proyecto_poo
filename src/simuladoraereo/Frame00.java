@@ -10,45 +10,39 @@ import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
-import javax.swing.JTextField;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 
 /**
  *
  * @author maferhernandezdiaz
  */
-public class MainFrame extends JFrame {
-    public MainFrame(String title, Boeing avion){
+public class Frame00 extends JFrame {
+    public Frame00(String title, Boeing avion, Tanque tanque){
         super (title);
     
-    
-    //LAYOUT MANAGER
     setLayout(new BorderLayout());
    
-    //Swing components
-    
-    JTextField field1 = new JTextField();
-    field1.setText("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n¿Desea comenzar la simulacion?");
-    field1.setEditable(false);
-    
-    JButton button1 = new JButton ("Comenzar");
-    
-    
+
+        JLabel comenzarLabel = new JLabel("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n¿Desea comenzar la simulacion?");
+        JButton buttonBegin = new JButton ("Comenzar");
+
     //Swing components to content pane
     Container c= getContentPane();
     
-    c.add (field1, BorderLayout.CENTER);
+    c.add (comenzarLabel, BorderLayout.CENTER);
     
-    c.add (button1, BorderLayout.SOUTH);
+    c.add (buttonBegin, BorderLayout.SOUTH);
 
     
-    button1.addActionListener(new ActionListener() {
+    buttonBegin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                Frame01 frame01 = new Frame01();
                Boeing avionFinal = new Boeing();
-               avionFinal = frame01.Frame01(avion);
+               Tanque tanqueFinal = new Tanque();
+               tanqueFinal = frame01.Frame01(tanque);
               
                 
             }

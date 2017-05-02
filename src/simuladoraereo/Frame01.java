@@ -20,105 +20,98 @@ import javax.swing.JTextField;
  */
 public class Frame01 extends JFrame{
 
-    /**
-     *
-     */
+    public String gasStr;
+    public int gasolina; 
     
-    public Boeing Frame01(Boeing boeing){
-        JFrame frame = new JFrame("JFrame Example");
+    public Tanque Frame01(Tanque tanque){
+        JFrame frame01 = new JFrame("Tanque");
         JPanel panel = new JPanel();
         panel.setLayout(null);
-        JLabel label = new JLabel("¿Que tipo de tanque necesitas?");
-        JTextField tanque = new JTextField();
-        JLabel encendidoLabel = new JLabel("¿Esta encendido?");
-        JCheckBox encendidoCheckbox = new JCheckBox("Encendido");
+        
+        JLabel tanqueLabel = new JLabel("¿Que tipo de gasolina necesitas?");
+        JTextField tanqueRespuesta = new JTextField();
+        JLabel llenoLabel = new JLabel("¿Quieres llenar el tanque?");
+        JCheckBox llenoCheckbox = new JCheckBox("Si");
+        JLabel vaciarLabel = new JLabel("¿Quieres vaciar el tanque?");
+        JCheckBox vaciarCheckbox = new JCheckBox("Si");
+        JLabel verifcarLabel = new JLabel("¿Cuantos litros de gasolina quieres que tenga el tanque?");
+        JLabel verifcarLabel1 = new JLabel("(Pon solo numero entre 0 y 300)");
+        JTextField verificarRespuesta = new JTextField();
+        
+        
         
         JButton button = new JButton();
         button.setText("Siguiente");
         
-        label.setBounds(100,20, 120, 30);
-        tanque.setBounds(100, 55, 120, 30);
-        encendidoLabel.setBounds(100,90, 120, 30);
-        encendidoCheckbox.setBounds(100,110,120,30);
-        button.setBounds(100, 200, 120, 30);
+        tanqueLabel.setBounds(150,20, 300, 30);
+        tanqueRespuesta.setBounds(200, 55, 120, 30);
+        llenoLabel.setBounds(150,90, 200, 30);
+        llenoCheckbox.setBounds(200,110,120,30);
+        vaciarLabel.setBounds(150, 130, 200, 30);
+        vaciarCheckbox.setBounds(200, 150, 120, 30);
+        verifcarLabel.setBounds(100, 170, 490, 30);
+        verifcarLabel1.setBounds(150,200,300,30);
+        verificarRespuesta.setBounds(200, 230, 120, 30);
+        button.setBounds(200, 260, 120, 30);
         
-   
         
-        panel.add(label);
+        panel.add(tanqueLabel);
+        panel.add(tanqueRespuesta);
+        panel.add(llenoLabel);
+        panel.add(llenoCheckbox);
+        panel.add(vaciarLabel);
+        panel.add(vaciarCheckbox);
+        panel.add(verifcarLabel);
+        panel.add(verifcarLabel1);
+        panel.add(verificarRespuesta);
         panel.add(button);
-        panel.add(tanque);
-        panel.add(encendidoLabel);
-        panel.add(encendidoCheckbox);
-        frame.add(panel);
-        frame.setSize(300, 300);
         
-        frame.setLocationRelativeTo(null);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
+        
+        
+        frame01.add(panel);
+        frame01.setSize(500, 400);
+        frame01.setLocationRelativeTo(null);
+        frame01.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame01.setVisible(true);
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               System.out.println("El texto dice " + tanque.getText()); 
-               boeing.motor.setMarca(tanque.getText());
-                System.out.println("El valor del boton es "+ encendidoCheckbox.isSelected());
+             
+               System.out.println("El tipo de gasolina es " + tanqueRespuesta.getText()); 
+               tanque.setTipoGasolina(tanqueRespuesta.getText());
+               
+               
+               System.out.println("El tanque lo lleno "+ llenoCheckbox.isSelected());               
+               if (llenoCheckbox.isSelected()){
+                  tanque.LlenarTanque();
+                  tanque.setLitrosGasolina(gasolina);
+                  }
+               
+               System.out.println("El tanque lo vacio " + vaciarCheckbox.isSelected());
+               tanque.LiberarTanque();
+               if (vaciarCheckbox.isSelected()){
+                  tanque.LiberarTanque();
+                  tanque.setLitrosGasolina(gasolina);
+                  }
+               
+               gasStr = verificarRespuesta.getText();
+               gasolina = Integer.parseInt(gasStr);
+               tanque.setLitrosGasolina(gasolina);
+               System.out.println("El tanque tiene " + gasolina + "lts.");
+               tanque.VerificarTanque(gasolina);
+               tanque.setLitrosGasolina(gasolina);
+               
+              Frame02 frame02 = new Frame02();
+              
+              //DANIEL: me no comprender porque esto no funciona.
+              //Areonave areonaveFinal = new Areonave();
+              //areonaveFinal = frame02.Frame02(areonave);
+              //frame01.dispose();
                 
             }
         });
-        return boeing;
+        return tanque;
 
     }
-//    public  Frame01(){
-//    setSize(500,700);
-//    setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-//    setVisible(true);
-//    
-//    //LAYOUT MANAGER
-//    setLayout(new BorderLayout());
-//   
-//    //Swing components
-//    
-//    JTextField field1 = new JTextField();
-//    field1.setText("¿Qué tipo de tanque necesita?");
-//    field1.setLocation(0, 0);
-//    
-//    field1.setEditable(false);
-//    JTextField field2 = new JTextField();
-//    field2.setText("Escribe aquí tu respuesta");
-//    field2.setEditable(false);
-//    JTextField fieldr = new JTextField();
-//    fieldr.setEditable(true);
-//    
-//    JButton button1 = new JButton ("Siguiente");
-//    
-//    //comand shift flechta seleciona todo 
-//    //Swing components to content pane
-//   
-//// Container c= getContentPane();
-//     JPanel panel= new JPanel(new GridBagLayout());
-//     panel.add(field1);
-//     field1.setSize(20,20);
-//     field1.setLocation(0,0);
-//   
-//    
-//    /*
-//    c.add (field1, BorderLayout.CENTER);
-//    c.add (field2, BorderLayout.CENTER);
-//    c.add (fieldr, BorderLayout.CENTER);
-//    c.add (button1, BorderLayout.SOUTH);
-//    */
-//    
-//    button1.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//               Frame1 frame1 = new Frame1();
-//               Avion avion = new Avion();
-//               
-//                
-//            }
-//        });
-//        
-//    
-//
-//  }  
     
 }

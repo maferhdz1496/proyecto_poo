@@ -12,12 +12,12 @@ public class SimuladorAereo{
 
     public static void main(String[] args) {
         // TODO code application logic here
-        Boeing avion = new Boeing ();
-        JFrame mf = new MainFrame("Simulador de Areonave", avion);
+        Boeing boeing = new Boeing ();
+        Tanque tanque = new Tanque();
+        Frame00 mf = new Frame00("Simulador Aereo", boeing, tanque);
         mf.setSize(500,300);
         mf.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         mf.setVisible(true);
-        Boeing boeing = new Boeing();
         System.out.println(boeing.toString());
     }   
 }

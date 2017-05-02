@@ -37,7 +37,7 @@ public class Bodega {
                "\n\tLa carga tiene " + carga + "lts." ;
     }
 
- public boolean llenarBodega(){
+ public boolean LlenarBodega(int carga){
             if(this.getCarga()>=2000){
                 System.out.println("Se esta llenando la bodega");
                 this.setCarga(2000);
@@ -48,7 +48,7 @@ public class Bodega {
             }
     }
       
- public boolean VaciarBodega()  {
+ public boolean VaciarBodega(int carga)  {
      if (this.getCarga()>=2000){
          System.out.println("Se esta vaciando la bodega");
          this.setCarga(0);
@@ -59,4 +59,18 @@ public class Bodega {
          return false;
      }
   }
-}
+ 
+ public boolean VerificarPeso(int carga){
+     if (this.getCarga()>=2000){
+         System.out.println("No se puede despegar, cambiar carga");
+         return true;
+         
+     }else{
+         System.out.println("Puede despegar...."); 
+         return false;
+     }
+  }
+ }
+ 
+ 
+

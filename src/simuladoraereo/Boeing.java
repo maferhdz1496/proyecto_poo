@@ -14,15 +14,14 @@ public class Boeing extends Avion implements InterfazDeVuelo {
     private String numeroSerie;
     private int numeroVuelo;
     private String destino;
-    private int pasajeros;
     private boolean enVuelo = false;
 
-    public Boeing(String numeroSerie, int numeroVuelo, String destino, int pasajeros, String piloto, String copiloto, Asiento asientos, Bodega bodegaCarga, Bano banos, int velocidadMaxima, int vidaUtil, int anoFabricacion, Motor motor, TrenDeAterrisaje tren, String fabricante, Tanque tanque) {
+    public Boeing(String numeroSerie, int numeroVuelo, String destino, String piloto, String copiloto, Asiento asientos, Bodega bodegaCarga, Bano banos, int velocidadMaxima, int vidaUtil, int anoFabricacion, Motor motor, TrenDeAterrisaje tren, String fabricante, Tanque tanque) {
         super(piloto, copiloto, asientos, bodegaCarga, banos, velocidadMaxima, vidaUtil, anoFabricacion, motor, tren, fabricante, tanque);
         this.numeroSerie = numeroSerie;
         this.numeroVuelo = numeroVuelo;
         this.destino = destino;
-        this.pasajeros = pasajeros;
+  
     }
 
     public Boeing() {
@@ -30,7 +29,7 @@ public class Boeing extends Avion implements InterfazDeVuelo {
         this.numeroSerie = "34567";
         this.numeroVuelo = 345;
         this.destino = "Hawai";
-        this.pasajeros = 200;
+ 
     }
 
    
@@ -59,13 +58,6 @@ public class Boeing extends Avion implements InterfazDeVuelo {
         this.destino = destino;
     }
 
-    public int getPasajeros() {
-        return pasajeros;
-    }
-
-    public void setPasajeros(int pasajeros) {
-        this.pasajeros = pasajeros;
-    }
 
     public boolean isEnVuelo() {
         return enVuelo;
@@ -81,7 +73,6 @@ public class Boeing extends Avion implements InterfazDeVuelo {
                 "\n\t Numero de Serie= " + numeroSerie +
                 "\n\t Numero de Vuelo= " + numeroVuelo +
                 "\n\t Destino= " + destino +
-                "\n\t Pasajeros= " + pasajeros + 
                 "\n\t Ya esta en vuelo= " + enVuelo + super.toString();
     }
     

@@ -103,7 +103,7 @@ public class Motor {
         } 
   }
    
-   public boolean SubirPotencia()  {
+   public boolean SubirPotencia(int potencia)  {
        if(potencia >= 0 && potencia <= 50){
            System.out.println("Subiendo potencia");
             return true;
@@ -114,7 +114,7 @@ public class Motor {
         }
     }
    
-   public boolean BajarPotencia()  {
+   public boolean BajarPotencia(int potencia)  {
        if(potencia >= 100 && potencia <= 50){
            System.out.println("Bajando potencia");
            return true;

@@ -57,7 +57,7 @@ public class Tanque {
      }
     }
       
-    public boolean VerificarTanque()  {
+    public boolean VerificarTanque(int litrosGasolina)  {
 if (litrosGasolina<3000 && litrosGasolina>0 ){
          System.out.println("Hay gasolina en el tanque");
          return true;

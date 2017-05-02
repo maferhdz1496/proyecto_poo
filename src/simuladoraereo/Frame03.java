@@ -1,0 +1,90 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package simuladoraereo;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+/**
+ *
+ * @author maferhernandezdiaz
+ */
+public class Frame03 {
+    
+    
+    public TrenDeAterrisaje Frame03(TrenDeAterrisaje tren){
+        JFrame frame03 = new JFrame("Tren de Aterrisaje");
+        JPanel panel = new JPanel();
+        panel.setLayout(null);
+        
+     
+        JLabel descenderTrenLabel = new JLabel("¿Quieres descender el tren?");
+        JCheckBox descenderTrenRespuesta = new JCheckBox("Si");
+        JLabel acenderTrenLabel = new JLabel("¿Quieres acender el tren");
+        JCheckBox ascenderTrenRespuesta = new JCheckBox("Si");
+
+        
+        
+        
+        JButton button = new JButton();
+        button.setText("Siguiente");
+        
+       
+        descenderTrenLabel.setBounds(150,20, 490, 30);
+        descenderTrenRespuesta.setBounds(200,50,120,30);
+        acenderTrenLabel.setBounds(150, 130, 490, 30);
+        ascenderTrenRespuesta.setBounds(200, 110, 120, 30);
+     
+        button.setBounds(150, 240, 120, 30);
+        
+
+        panel.add(descenderTrenLabel);
+        panel.add(descenderTrenRespuesta);
+        panel.add(acenderTrenLabel);
+        panel.add(ascenderTrenRespuesta);
+
+        panel.add(button);
+        
+        
+        
+        frame03.add(panel);
+        frame03.setSize(500, 150);
+        frame03.setLocationRelativeTo(null);
+        frame03.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame03.setVisible(true);
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+             
+               System.out.println("El tren descendio " + ascenderTrenRespuesta.getText()); 
+               
+               if (ascenderTrenRespuesta.isSelected()){
+                  tren.AcenderTren();
+                  tren.setTrenAbajo(ascenderTrenRespuesta.isSelected());
+                  }
+               
+               System.out.println("El tren ascendio "+ descenderTrenRespuesta.isSelected());
+               if (descenderTrenRespuesta.isSelected()){
+                  tren.DescenderTren();
+                  tren.setTrenAbajo(descenderTrenRespuesta.isSelected());
+                  }
+             
+               
+               
+              Frame04 frame04 = new Frame04();
+       
+                
+            }
+        });
+        return tren;
+
+    }
+}
