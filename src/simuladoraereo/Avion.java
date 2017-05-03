@@ -91,7 +91,7 @@ public abstract class Avion extends Areonave {
   public abstract boolean apagar();
 
   @Override
-  public  abstract boolean reparar();
+  public  abstract boolean reparar(int vidaUtil);
   
   @Override
   public abstract boolean encender();

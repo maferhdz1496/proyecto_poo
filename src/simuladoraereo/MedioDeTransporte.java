@@ -12,7 +12,7 @@ package simuladoraereo;
 public abstract class MedioDeTransporte {
     protected String fabricante;
     protected Tanque tanque;
-    protected boolean encendido = true;
+    protected boolean encender = false;
 
     public MedioDeTransporte(String fabricante, Tanque tanque) {
         this.fabricante = fabricante;
@@ -50,6 +50,6 @@ public abstract class MedioDeTransporte {
    
   public abstract boolean apagar();
       
-  public abstract boolean reparar();
+  public abstract boolean reparar(int vidaUtil);
       
 }

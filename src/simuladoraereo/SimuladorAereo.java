@@ -25,5 +25,13 @@ public class SimuladorAereo{
         System.out.println("_____________");
         System.out.println("INFORMACION DEL AVION");
         System.out.println(boeing.toString());
+        
+        System.out.println("\n SIMULACION USANDO SWING..."+
+                " \nIMPRESION DE ATRIBUTOS Y METODOS A ELECION DEL USUARIO EN RUN");
+        System.out.println("\n(Escriba en todos los espacios disponibles ya sea numeros o letras,"
+                + "\n dependiendo de lo que se pida, si no selecciona algo,"
+                + "\n el programa sabra que no quiere hacer cierta accion y actuará "
+                + "\n poniendo false en el Run, si selecciona true, el metodo funcionara acorde"
+                + "\n a lo que usted pida).");
     }   
 }

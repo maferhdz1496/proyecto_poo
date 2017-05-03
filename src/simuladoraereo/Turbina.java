@@ -59,12 +59,12 @@ public class Turbina {
     public boolean desRotacion()  {
        if(this.rotando){
             this.rotando = false;
-            System.out.println("Deteniendo rotacion");
+            System.out.println("Deteniendo rotacion...");
             return true;
             
         } else {
             this.rotando = true;
-            System.out.println("Ya estaba detenido");
+            System.out.println("Ya estaba detenido....");
             return false;
         }
     }

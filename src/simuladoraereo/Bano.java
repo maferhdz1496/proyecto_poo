@@ -37,12 +37,12 @@ public class Bano{
    public boolean UsarBaño()  {
       if(this.ocupado){
             this.ocupado = false;
-            System.out.println("Puede usar el baño");
+            System.out.println("Puede usar el baño...");
             return true;
             
         } else {
             this.ocupado = true;
-            System.out.println("Esta ocupado");
+            System.out.println("Esta ocupado...");
             return false;
         }
   

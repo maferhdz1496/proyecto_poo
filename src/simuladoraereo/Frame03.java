@@ -28,7 +28,7 @@ public class Frame03 {
      
         JLabel descenderTrenLabel = new JLabel("¿Quieres descender el tren?");
         JCheckBox descenderTrenRespuesta = new JCheckBox("Si");
-        JLabel acenderTrenLabel = new JLabel("¿Quieres acender el tren");
+        JLabel acenderTrenLabel = new JLabel("¿Quieres acender el tren?");
         JCheckBox ascenderTrenRespuesta = new JCheckBox("Si");
 
         
@@ -56,7 +56,7 @@ public class Frame03 {
         
         
         frame03.add(panel);
-        frame03.setSize(500, 200);
+        frame03.setSize(400, 230);
         frame03.setLocationRelativeTo(null);
         frame03.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame03.setVisible(true);
@@ -65,20 +65,28 @@ public class Frame03 {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-               System.out.println("El tren descendio " + ascenderTrenRespuesta.getText()); 
+               System.out.println("\nEl tren acendio " + ascenderTrenRespuesta.isSelected()); 
                
                if (ascenderTrenRespuesta.isSelected()){
                   boeing.tren.acenderTren();
                   boeing.tren.setTrenAbajo(ascenderTrenRespuesta.isSelected());
                   }
+               if (ascenderTrenRespuesta.isSelected()==false){
+                  boeing.tren.setTrenAbajo(ascenderTrenRespuesta.isSelected());
+                  }
                
-               System.out.println("El tren ascendio "+ descenderTrenRespuesta.isSelected());
+               System.out.println("El tren descendio "+ descenderTrenRespuesta.isSelected());
+               
                if (descenderTrenRespuesta.isSelected()){
                   boeing.tren.descenderTren();
                   boeing.tren.setTrenAbajo(descenderTrenRespuesta.isSelected());
                   }
-               frame03.setVisible(false);
-
+               if (descenderTrenRespuesta.isSelected()==false){
+                  boeing.tren.setTrenAbajo(descenderTrenRespuesta.isSelected());
+                  }
+               
+               
+              frame03.setVisible(false);
               Frame04 frame04 = new Frame04();
               Boeing boeing = new Boeing();
               boeing = frame04.Frame04(boeing);

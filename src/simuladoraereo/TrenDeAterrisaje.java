@@ -46,27 +46,27 @@ public class TrenDeAterrisaje {
     
    public boolean acenderTren(){
        if(this.trenAbajo){
-            this.trenAbajo = false;
-            System.out.println("Acendiendo el tren");
-            return true;
+            this.trenAbajo = true;
+            System.out.println("Acendiendo el tren....");
+            return false;
             
         } else {
-            this.trenAbajo = true;
-            System.out.println("Ya estaba arriba");
-            return false;
+            this.trenAbajo = false;
+            System.out.println("Ya estaba arriba....");
+            return true;
         }
 
    }
     public boolean descenderTren (){
         if(this.trenAbajo){
-            this.trenAbajo = false;
-            System.out.println("Decendiendo areonave");
-            return true;
+            this.trenAbajo = true;
+            System.out.println("Ya estaba abajo....");
+            return false;
             
         } else {
-            this.trenAbajo = true;
-            System.out.println("Ya estaba abajo");
-            return false;
+            this.trenAbajo = false;
+            System.out.println("Descendiendo tren.....");
+            return true;
         }
     }     
 }

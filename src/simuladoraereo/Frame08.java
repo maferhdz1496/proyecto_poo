@@ -38,11 +38,11 @@ public class Frame08 extends JFrame{
         JButton button = new JButton();
         button.setText("Siguiente");
         
-        pilotoLabel.setBounds(150,20, 300, 30);
-        pilotoRespuesta.setBounds(200, 50, 120, 30);
+        pilotoLabel.setBounds(100,20, 300, 30);
+        pilotoRespuesta.setBounds(120, 50, 120, 30);
         copilotoLabel.setBounds(100, 80, 300, 30);
-        copilotoRespuesta.setBounds(200, 110, 120, 30);
-        button.setBounds(200, 140, 120, 30);
+        copilotoRespuesta.setBounds(120, 110, 120, 30);
+        button.setBounds(120, 150, 120, 30);
         
         
         panel.add(pilotoLabel);
@@ -54,7 +54,7 @@ public class Frame08 extends JFrame{
         
         
         frame08.add(panel);
-        frame08.setSize(500,200);
+        frame08.setSize(330,210);
         frame08.setLocationRelativeTo(null);
         frame08.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame08.setVisible(true);
@@ -62,11 +62,12 @@ public class Frame08 extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
              
-               System.out.println("El piloto es " + pilotoRespuesta.getText()); 
+               System.out.println("\nEl piloto es: " + pilotoRespuesta.getText()); 
                boeing.setPiloto(pilotoRespuesta.getText());
               
-               System.out.println("El copiloto es " + copilotoRespuesta.getText());
+               System.out.println("El copiloto es: " + copilotoRespuesta.getText());
                boeing.setPiloto(pilotoRespuesta.getText());
+               
               frame08.setVisible(false);
               Frame09 frame09 = new Frame09();
               Boeing boeing = new Boeing();

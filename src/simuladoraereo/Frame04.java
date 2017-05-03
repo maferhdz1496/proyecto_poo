@@ -40,7 +40,7 @@ import javax.swing.JTextField;
         JButton button = new JButton();
         button.setText("Siguiente");
         
-        presionLlantaLabel.setBounds(150,20, 300, 30);
+        presionLlantaLabel.setBounds(110,20, 300, 30);
         presionLlantaLabel1.setBounds(150,50, 300, 30);
         presionLlantaRespuesta.setBounds(200, 80, 120, 30);
         inflarLlantaLabel.setBounds(150,110, 300, 30);
@@ -48,7 +48,7 @@ import javax.swing.JTextField;
         desinflarLlantaLabel.setBounds(150, 170, 300, 30);
         desinflarLlantaRespuesta.setBounds(200, 200, 120, 30);
 
-        button.setBounds(150, 230, 120, 30);
+        button.setBounds(200, 230, 120, 30);
         
         
         panel.add(presionLlantaLabel);
@@ -64,7 +64,7 @@ import javax.swing.JTextField;
         
         
         frame04.add(panel);
-        frame04.setSize(500, 300);
+        frame04.setSize(430, 300);
         frame04.setLocationRelativeTo(null);
         frame04.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame04.setVisible(true);
@@ -74,7 +74,7 @@ import javax.swing.JTextField;
              
                 presionLlantaStr = presionLlantaRespuesta.getText();
                 presionLlantaInt = Integer.parseInt(presionLlantaStr);   
-               System.out.println("La presion de llanta es " + presionLlantaInt);
+               System.out.println("\nLa presion de llanta es " + presionLlantaInt);
                boeing.tren.llanta.VerificarPresion(presionLlantaInt);
                boeing.tren.llanta.setPresion(presionLlantaInt);
                

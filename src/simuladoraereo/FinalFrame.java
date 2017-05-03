@@ -37,8 +37,8 @@ public class FinalFrame extends JFrame{
         JButton button = new JButton();
         button.setText("Terminar");
         
-        text.setBounds(0,20, 490, 940);
-        button.setBounds(200, 970, 120, 30);
+        text.setBounds(20,20, 460, 650);
+        button.setBounds(200, 700, 120, 30);
         
         
         panel.add(text);
@@ -49,17 +49,14 @@ public class FinalFrame extends JFrame{
         
         
         frame1.add(panel);
-        frame1.setSize(500,1000);
+        frame1.setSize(500,750);
         frame1.setLocationRelativeTo(null);
         frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame1.setVisible(true);
         
         button.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
-             
-            //button.dispose();
-               
+            public void actionPerformed(ActionEvent e) { 
                
               frame1.setVisible(false);
             }

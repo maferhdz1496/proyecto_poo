@@ -34,13 +34,13 @@ public class Aspa {
     }
     public boolean VerificarAspa()  {
       if(this.rota){
-            this.rota = true;
-            System.out.println("El aspa esta rotando correctamente");
-            return false;
+            this.rota = false;
+            System.out.println("El aspa esta rotando correctamente...");
+            return true;
             
         } else {
             this.rota = true;
-            System.out.println("El aspa no esta rotando");
+            System.out.println("El aspa no esta rotando correctamente no puede rotar...");
             return false;
         }
   }

@@ -37,12 +37,12 @@ public class Llanta {
    
    public boolean InflarLlanta(int presion)  {
      if (presion<0 ){
-         System.out.println("Inflando llanta");
+         System.out.println("Inflando llanta...");
          this.setPresion(200);
          return true;
          
      }else{
-         System.out.println("Ya estaba inflada"); 
+         System.out.println("Ya estaba inflada...."); 
          return false;
      }
   }
@@ -51,24 +51,24 @@ public class Llanta {
     
    public boolean DesinflarLlanta(int presion)  {
      if (presion>=200 ){
-         System.out.println("Desinflando llanta");
+         System.out.println("Desinflando llanta...");
          this.setPresion(200);
          return true;
          
      }else{
-         System.out.println("Ya estaba desinflada"); 
+         System.out.println("Ya estaba desinflada..."); 
          return false;
      } 
   } 
    
   
    public boolean VerificarPresion(int presion)  {
-    if (presion<200 && presion<150 ){
-         System.out.println("La llanta esta en niveles optimos");
+    if (presion>100 && presion<0 ){
+         System.out.println("La llanta esta en niveles optimos...");
          return true;
      }else{
-         System.out.println("Iflando a nivel optimo"); 
-         this.setPresion(175);
+         System.out.println("Iflando o desinflando a nivel optimo porque esta mal el nivel de eleccion.... Ya tiene 100 de presion"); 
+         this.setPresion(100);
          return false;
      }
      }

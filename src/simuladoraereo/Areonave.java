@@ -85,20 +85,8 @@ public abstract class Areonave extends MedioDeTransporte {
     
     @Override
     public abstract boolean apagar();
-    
      @Override
-    public  boolean reparar(){
-         if( 10 <this.vidaUtil){
-            System.out.println("Reparando Areonave");
-            return true;
-            
-        } else {
-            this.encendido = true;
-            System.out.println("Todavia funciona");
-            return false;
-        }
-    }
-    
+    public  abstract boolean reparar(int vidaUtil);
     @Override
     public abstract boolean encender();
      

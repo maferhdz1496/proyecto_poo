@@ -113,11 +113,11 @@ public class Boeing extends Avion implements InterfazDeVuelo {
     public boolean subir(){
         if(this.enVuelo){
             this.enVuelo = true;
-            System.out.println("Subiendo un poco la areonave");
+            System.out.println("Subiendo un poco la areonave...");
             return false;
             } else {
             this.enVuelo = false;
-            System.out.println("Necesitas despegar");
+            System.out.println("Necesitas despegar...");
             return false;
         } 
     }
@@ -126,54 +126,57 @@ public class Boeing extends Avion implements InterfazDeVuelo {
     public boolean bajar(){
         if(this.enVuelo){
             this.enVuelo = true;
-            System.out.println("Bajando un poco la areonave");
+            System.out.println("Bajando un poco la areonave...");
             return false;
             } else {
             this.enVuelo = false;
-            System.out.println("Necesitas despegar");
+            System.out.println("Necesitas despegar...");
             return false;
         } 
     }
         
    @Override  
   public boolean encender(){
-      if(this.encendido){
-            this.encendido = false;
-            System.out.println("Se enciende la areonave");
-            return true;
+      if(this.encender){
+            this.encender = true;
+            System.out.println("Se enciende la areonave...");
+            return false;
             
         } else {
-            this.encendido = true;
-            System.out.println("Ya estaba encendido");
-            return false;
+            this.encender = false;
+            System.out.println("Ya estaba encendido...");
+            return true;
         }
   }
   
    @Override
   public  boolean apagar(){
-       if(this.encendido){
-            this.encendido = true;
-            System.out.println("Se apaga la areonave");
+       if(this.encender){
+            this.encender = true;
+            System.out.println("Se apaga la areonave...");
             return false;
             
         } else {
-            this.encendido = true;
-            System.out.println("Ya estaba apagado");
-            return false;
+            this.encender = false;
+            System.out.println("Ya estaba apagado...");
+            return true;
         }
   }
       
 
    @Override   
-  public  boolean reparar(){
-    if(this.vidaUtil>10){
-            System.out.println("Reparando Areonave");
+  public  boolean reparar(int vidaUtil){
+    if( 10 <this.vidaUtil){
+             int vidaNueva;
+            vidaNueva = 0;
+            System.out.println("Reparando Areonave" + "La nueva vida util de tu areonave es de..." + vidaNueva);
+            this.setVidaUtil(0);
             return true;
             
         } else {
-            this.encendido = true;
-            System.out.println("Todavia funciona");
+            this.encender = true;
+            System.out.println("La vida util del avion es optima...");
             return false;
         }
-  }
+    }
 }

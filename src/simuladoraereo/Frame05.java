@@ -34,7 +34,7 @@ public class Frame05 extends JFrame {
         JLabel apagarMotorLabel = new JLabel("¿Quieres apagar el motor?");
         JCheckBox apagarMotorRespuesta = new JCheckBox("Si");
         JLabel potenciaMotorLabel = new JLabel("¿Cuanta potencia tiene el motor?");
-        JLabel potenciaMotorLabel1 = new JLabel("(Pon solo numeros entre 0 y 100)");
+        JLabel potenciaMotorLabel1 = new JLabel("(Puede ser cualquier numero)");
         JTextField potenciaMotorRespuesta = new JTextField();
         JLabel subirPotenciaMLabel = new JLabel("¿Quieres subir la potencia?");
         JCheckBox subirPotenciaMRespuesta = new JCheckBox("Si");
@@ -48,16 +48,16 @@ public class Frame05 extends JFrame {
         marcaMotorLabel.setBounds(150,20, 300, 30);
         marcaMotorRespuesta.setBounds(200, 50, 120, 30);
         apagarMotorLabel.setBounds(150,80, 200, 30);
-        apagarMotorRespuesta.setBounds(200,110,120,30);
+        apagarMotorRespuesta.setBounds(250,110,120,30);
         encenderMotorLabel.setBounds(150, 130, 200, 30);
-        encenderMotorRespuesta.setBounds(200, 150, 120, 30);
-        potenciaMotorLabel.setBounds(100, 170, 490, 30);
+        encenderMotorRespuesta.setBounds(250, 150, 120, 30);
+        potenciaMotorLabel.setBounds(150, 170, 490, 30);
         potenciaMotorLabel1.setBounds(150,200,300,30);
         potenciaMotorRespuesta.setBounds(200, 230, 120, 30);
-        subirPotenciaMLabel.setBounds(200, 260, 300, 30);
-        subirPotenciaMRespuesta.setBounds(200, 290, 120, 30);
-        bajarPotenciaMLabel.setBounds(200, 310, 300, 30);
-        bajarPotenciaMRespuesta.setBounds(200, 340, 120, 30);
+        subirPotenciaMLabel.setBounds(150, 260, 300, 30);
+        subirPotenciaMRespuesta.setBounds(250, 290, 120, 30);
+        bajarPotenciaMLabel.setBounds(150, 310, 300, 30);
+        bajarPotenciaMRespuesta.setBounds(250, 340, 120, 30);
        
         button.setBounds(200, 370, 120, 30);
         
@@ -89,37 +89,55 @@ public class Frame05 extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
              
-               System.out.println("La marca del motor es " + marcaMotorRespuesta.getText()); 
+               System.out.println("\nLa marca del motor es: " + marcaMotorRespuesta.getText()); 
                boeing.motor.setMarca(marcaMotorRespuesta.getText());
                        
                System.out.println("El motor esta apagado "+ apagarMotorRespuesta.isSelected());               
                if (apagarMotorRespuesta.isSelected()){
+                  boeing.motor.apagarMotor();
+                  boeing.motor.setEncendidoM(apagarMotorRespuesta.isSelected());
+                  }
+               if (apagarMotorRespuesta.isSelected()){
                   boeing.motor.setEncendidoM(apagarMotorRespuesta.isSelected());
                   }
                
+               
                System.out.println("El motor esta encendido "+ encenderMotorRespuesta.isSelected());               
                if (encenderMotorRespuesta.isSelected()){
+                  boeing.motor.encenderMotor();
+                  boeing.motor.setEncendidoM(apagarMotorRespuesta.isSelected());
+                  }
+               if (encenderMotorRespuesta.isSelected()==false){
                   boeing.motor.setEncendidoM(apagarMotorRespuesta.isSelected());
                   }
                
                 potenciaMotorStr = potenciaMotorRespuesta.getText();
                 potenciaMotorInt = Integer.parseInt(potenciaMotorStr);   
-                System.out.println("La potencia  de llanta es " + potenciaMotorInt);
+                System.out.println("La potencia  del motor es: " + potenciaMotorInt);
                 boeing.motor.setPotencia(potenciaMotorInt);
                
                 
-               System.out.println("Se subio la potencia del motor "+ subirPotenciaMRespuesta.getText());
-               boeing.motor.subirPotencia(potenciaMotorInt);
-               boeing.motor.setPotencia(potenciaMotorInt);
-                
+               System.out.println("Se subio la potencia del motor "+ subirPotenciaMRespuesta.isSelected());
+               if (subirPotenciaMRespuesta.isSelected()){
+                  boeing.motor.subirPotencia();
+                  boeing.motor.setPotencia(potenciaMotorInt);
+                  }
+               if (subirPotenciaMRespuesta.isSelected()==false){
+                  boeing.motor.setPotencia(potenciaMotorInt);
+                  }
+ 
                
                
+               System.out.println("Se bajo la potencia del motor " + bajarPotenciaMRespuesta.isSelected());              
+               if (bajarPotenciaMRespuesta.isSelected()){
+                 boeing.motor.bajarPotencia();
+                 boeing.motor.setPotencia(potenciaMotorInt);
+                  }
+               if (bajarPotenciaMRespuesta.isSelected()== false){
+                 boeing.motor.setPotencia(potenciaMotorInt);
+                  }
                
-               System.out.println("Se bajo la potencia del motor " + bajarPotenciaMRespuesta.getText());              
-               boeing.motor.bajarPotencia(potenciaMotorInt);
-               boeing.motor.setPotencia(potenciaMotorInt);
-                  
-               
+
               frame05.setVisible(false);
               Frame06 frame06 = new Frame06();
               Boeing boeing = new Boeing();

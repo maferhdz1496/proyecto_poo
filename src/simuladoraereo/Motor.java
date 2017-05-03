@@ -60,11 +60,7 @@ public class Motor {
     }
 
     public void setPotencia(int potencia) {
-        if(potencia >= 0 && potencia <= 100){
             this.potencia = potencia;
-        } else {
-            System.out.println("La potencia debe de estar entre 0 y 100");
-        }
     }
     
 
@@ -118,33 +114,32 @@ public class Motor {
        if(this.encendidoM){
             this.encendidoM = true;
             turbina.desRotacion();
-            System.out.println("Apagando motor");
+            System.out.println("Apagando motor...");
             return false;
             
         } else {
             this.encendidoM = false;
-            System.out.println("Ya estaba apagado");
+            System.out.println("Ya estaba apagado...");
             return true;
         } 
-  }
+    }
    
-   public boolean subirPotencia(int potencia)  {
-       if(potencia >= 0 && potencia <= 50){
-           System.out.println("Subiendo potencia");
+   public boolean subirPotencia()  {
+       if(potencia <= 0 && potencia>100){
+           System.out.println("Subiendo potencia...");
             return true;
-            
         } else {
-            System.out.println("La potencia ya esta en niveles optimos");
+                System.out.println("Sobrepasa niveles ...");
             return false;
         }
     }
    
-   public boolean bajarPotencia(int potencia)  {
-       if(potencia >= 100 && potencia <= 50){
-           System.out.println("Bajando potencia");
+   public boolean bajarPotencia()  {
+       if(potencia >= 100){
+           System.out.println("Bajando potencia...");
            return true;
         } else {
-            System.out.println("La potencia ya no se puede bajar si no el avion cae");
+            System.out.println("La potencia ya no se puede bajar si no el avion cae...");
             return false;
         }
     }

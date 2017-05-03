@@ -71,22 +71,22 @@ public class Asiento {
     
     public boolean VerificarAsientos(int pasajero, int asientos)  {
         if (this.asientos>=this.pasajero){
-         System.out.println("Podemos despegar");
+         System.out.println("Podemos despegar...");
          return true;
          
      }else{
-         System.out.println("Hay mas pasajeros que asientos, por favor bajar pasajeros y pasarlos a otro vuelo"); 
+         System.out.println("Hay mas pasajeros que asientos, por favor bajar pasajeros y pasarlos a otro vuelo..."); 
          return false;
      }
     }
     
     public boolean BajarPasajero(int pasajero)  {
         if (200<=pasajero){
-         System.out.println("Bajando los pasajeros necesarios");
+         System.out.println("Bajando los pasajeros necesarios...");
          return true;
          
      }else{
-         System.out.println("Podemos volar"); 
+         System.out.println("Podemos volar..."); 
          this.setPasajero(getAsientos());
          return false;
      }
@@ -94,11 +94,11 @@ public class Asiento {
        
     public boolean SubirPasajero(int pasajero)  {
         if (0>=pasajero){
-         System.out.println("Subiendo pasajeros necesarios");
+         System.out.println("Subiendo pasajeros necesarios...");
          return true;
          
      }else{
-         System.out.println("Podemos despegar"); 
+         System.out.println("Podemos despegar..."); 
          this.setPasajero(getAsientos());
          return false;
      }

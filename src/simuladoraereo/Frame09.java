@@ -29,7 +29,7 @@ import javax.swing.JTextField;
         panel.setLayout(null);
         
         JLabel cargaBodegaLabel = new JLabel("¿Cuanta carga tiene?");
-        JLabel cargaBodegaLabel1 = new JLabel("(Elije entre 0 y 2000 y que sea numero)");
+        JLabel cargaBodegaLabel1 = new JLabel("(Elije entre 0 y 2000)");
         JTextField cargaBodegaRespuesta = new JTextField();
         JLabel llenarBodegaLabel = new JLabel("¿Quieres llenar la bodega?");
         JCheckBox llenarBodegaRespuesta = new JCheckBox("Si");
@@ -39,14 +39,14 @@ import javax.swing.JTextField;
         JButton button = new JButton();
         button.setText("Siguiente");
         
-        cargaBodegaLabel.setBounds(150,20, 300, 30);
-        cargaBodegaLabel1.setBounds(150,50, 300, 30);
-        cargaBodegaRespuesta.setBounds(200, 80, 120, 30);
-        llenarBodegaLabel.setBounds(150,110, 300, 30);
-        llenarBodegaRespuesta.setBounds(200,140,120,30);
-        vaciarBodegaLabel.setBounds(150, 170, 300, 30);
-        vaciarBodegaRespuesta.setBounds(200, 200, 120, 30);
-        button.setBounds(150, 230, 120, 30);
+        cargaBodegaLabel.setBounds(100,20, 300, 30);
+        cargaBodegaLabel1.setBounds(100,50, 300, 30);
+        cargaBodegaRespuesta.setBounds(150, 80, 120, 30);
+        llenarBodegaLabel.setBounds(100,110, 300, 30);
+        llenarBodegaRespuesta.setBounds(150,140,120,30);
+        vaciarBodegaLabel.setBounds(100, 170, 300, 30);
+        vaciarBodegaRespuesta.setBounds(150, 200, 120, 30);
+        button.setBounds(120, 230, 120, 30);
         
         
         panel.add(cargaBodegaLabel);
@@ -62,7 +62,7 @@ import javax.swing.JTextField;
         
         
         frame09.add(panel);
-        frame09.setSize(500, 300);
+        frame09.setSize(400, 300);
         frame09.setLocationRelativeTo(null);
         frame09.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame09.setVisible(true);
@@ -72,21 +72,27 @@ import javax.swing.JTextField;
              
                 cargaBodegaStr = cargaBodegaRespuesta.getText();
                 cargaBodegaInt = Integer.parseInt(cargaBodegaStr);   
-               System.out.println("La carga es de " + cargaBodegaInt);
-               boeing.bodega.isListo();
+               System.out.println("\nLa carga es de " + cargaBodegaInt);
+               boeing.bodega.verificarBodega(cargaBodegaInt);
                 boeing.bodega.setCarga(cargaBodegaInt);
   
                
-               System.out.println("La carga es "+ llenarBodegaRespuesta.getText() );
+               System.out.println("La carga esta llena "+ llenarBodegaRespuesta.getText() );
                if (llenarBodegaRespuesta.isSelected()){
                    boeing.bodega.LlenarBodega(cargaBodegaInt);
                    boeing.bodega.setCarga(cargaBodegaInt);
                    }
 
+               if (llenarBodegaRespuesta.isSelected()==false){
+                   boeing.bodega.setCarga(cargaBodegaInt);
+                   }
                
-               System.out.println("La llanta se desinflo " + vaciarBodegaRespuesta.getText());
+               System.out.println("La carga esta vacia " + vaciarBodegaRespuesta.getText());
                if (vaciarBodegaRespuesta.isSelected()){
                   boeing.bodega.VaciarBodega(cargaBodegaInt);
+                  boeing.bodega.setCarga(cargaBodegaInt);
+                  }
+                if (vaciarBodegaRespuesta.isSelected()== false){
                   boeing.bodega.setCarga(cargaBodegaInt);
                   }
                

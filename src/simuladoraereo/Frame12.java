@@ -38,9 +38,9 @@ public class Frame12 extends JFrame{
         JCheckBox aterrizarRespuesta = new JCheckBox("Si");
         JLabel despegarLabel = new JLabel("¿Quieres despegar?");
         JCheckBox despegarRespuesta = new JCheckBox("Si");
-        JLabel encenderLabel = new JLabel("¿Quieres apagar el avion?");
+        JLabel encenderLabel = new JLabel("¿Quieres encender el avion?");
         JCheckBox encenderRespuesta = new JCheckBox("Si");
-        JLabel apagarLabel = new JLabel("¿Quieres encender el avion?");
+        JLabel apagarLabel = new JLabel("¿Quieres apagar el avion?");
         JCheckBox apagarRespuesta = new JCheckBox("Si");
 
         JButton button = new JButton();
@@ -49,18 +49,18 @@ public class Frame12 extends JFrame{
         numSerieLabel.setBounds(150,20, 300, 30);
         numSerieRespuesta.setBounds(200, 50, 120, 30);
         numVueloLabel.setBounds (150,80,300,30);
-        numVueloRespuesta.setBounds (150,110,120,30);
+        numVueloRespuesta.setBounds (200,110,120,30);
         destinoLabel.setBounds (150,140,300,30);
-        destinoRespuesta.setBounds (150,170,120,30);
+        destinoRespuesta.setBounds (200,170,120,30);
         aterrizarLabel.setBounds(150,200, 300, 30);
         aterrizarRespuesta.setBounds(200,230,120,30);
         despegarLabel.setBounds(150, 260, 300, 30);
-        despegarRespuesta.setBounds(290, 290, 120, 30);
+        despegarRespuesta.setBounds(200, 290, 120, 30);
         encenderLabel.setBounds(150,320, 300, 30);
         encenderRespuesta.setBounds(200,350,120,30);
         apagarLabel.setBounds(150, 380, 300, 30);
-        apagarRespuesta.setBounds(290, 410, 120, 30);
-        button.setBounds(150, 440, 120, 30);
+        apagarRespuesta.setBounds(200, 410, 120, 30);
+        button.setBounds(170, 440, 120, 30);
         
         
         panel.add(numSerieLabel);
@@ -91,39 +91,51 @@ public class Frame12 extends JFrame{
             public void actionPerformed(ActionEvent e) {
              
                   
-               System.out.println("El numero de serie es " + numSerieRespuesta.getText());
+               System.out.println("\nEl numero de serie es " + numSerieRespuesta.getText());
                boeing.setNumeroSerie(numSerieRespuesta.getText());
              
   
                numVueloStr = numSerieRespuesta.getText();
                numVueloInt = Integer.parseInt(numVueloStr);   
-               System.out.println("El numero de vuelo es" + numVueloInt);
+               System.out.println("El numero de vuelo es: " + numVueloInt);
                boeing.setNumeroVuelo(numVueloInt);
                
-               System.out.println("El destino es " + destinoRespuesta.getText());
+               System.out.println("El destino es: " + destinoRespuesta.getText());
                boeing.setDestino(destinoRespuesta.getText());
                
-               System.out.println("Aterrizando "+ aterrizarRespuesta.getText());
+               System.out.println("Aterrizando "+ aterrizarRespuesta.isSelected());
                if (aterrizarRespuesta.isSelected()){
                    boeing.aterrizar();
                    boeing.setEnVuelo(aterrizarRespuesta.isSelected());
                    }
+               if (aterrizarRespuesta.isSelected()==false){
+                   boeing.setEnVuelo(aterrizarRespuesta.isSelected());
+                   }
                
-               System.out.println("Despegado " + despegarRespuesta.getText());
+               System.out.println("Despegando " + despegarRespuesta.isSelected());
                if (despegarRespuesta.isSelected()){
                    boeing.despegar();
                    boeing.setEnVuelo(despegarRespuesta.isSelected());       
                   }
+               if (despegarRespuesta.isSelected()==false){
+                   boeing.setEnVuelo(despegarRespuesta.isSelected());       
+                  }
 
-               System.out.println("Lo encendio "+ encenderRespuesta.getText());
+               System.out.println("Lo encendio "+ encenderRespuesta.isSelected());
                if (encenderRespuesta.isSelected()){
                    boeing.encender();
                    boeing.setEnVuelo(encenderRespuesta.isSelected());
                    }
+               if (encenderRespuesta.isSelected()==false){
+                   boeing.setEnVuelo(encenderRespuesta.isSelected());
+                   }
                
-               System.out.println("Lo apago " + apagarRespuesta.getText());
+               System.out.println("Lo apago " + apagarRespuesta.isSelected());
                if (apagarRespuesta.isSelected()){
                    boeing.apagar();
+                   boeing.setEnVuelo(despegarRespuesta.isSelected());       
+                  }
+               if (apagarRespuesta.isSelected()==false){
                    boeing.setEnVuelo(despegarRespuesta.isSelected());       
                   }
              

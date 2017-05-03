@@ -39,7 +39,7 @@ public class Frame06 extends JFrame{
         desacelerandoTurbinaLabel.setBounds(150, 80, 200, 30);
         desacelerandoTurbinaRespuesta.setBounds(200, 110, 120, 30);
 
-        button.setBounds(200, 140, 120, 30);
+        button.setBounds(170, 140, 120, 30);
         
         
         panel.add(acelerandoTurbinaLabel);
@@ -52,7 +52,7 @@ public class Frame06 extends JFrame{
         
         
         frame06.add(panel);
-        frame06.setSize(500,200);
+        frame06.setSize(400,200);
         frame06.setLocationRelativeTo(null);
         frame06.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame06.setVisible(true);
@@ -61,16 +61,24 @@ public class Frame06 extends JFrame{
             public void actionPerformed(ActionEvent e) {
              
                
-               System.out.println("Acelarando turbina "+ acelerandoTurbinaRespuesta.isSelected());               
+               System.out.println("\nAcelarando turbina "+ acelerandoTurbinaRespuesta.isSelected());
+               
                if (acelerandoTurbinaRespuesta.isSelected()){
                   boeing.motor.turbina.haceRotacion();
                   boeing.motor.turbina.setRotando(acelerandoTurbinaRespuesta.isSelected());
                   }
+               if (acelerandoTurbinaRespuesta.isSelected()==false){
+                  boeing.motor.turbina.setRotando(acelerandoTurbinaRespuesta.isSelected());
+                  }
                
-               System.out.println("Desacelerando turbina" + desacelerandoTurbinaRespuesta.isSelected());
+               System.out.println("Desacelerando turbina " + desacelerandoTurbinaRespuesta.isSelected());
        
                if (desacelerandoTurbinaRespuesta.isSelected()){
                   boeing.motor.turbina.desRotacion();
+                  boeing.motor.turbina.setRotando(acelerandoTurbinaRespuesta.isSelected());
+                  }
+               
+                if (desacelerandoTurbinaRespuesta.isSelected()== false){
                   boeing.motor.turbina.setRotando(acelerandoTurbinaRespuesta.isSelected());
                   }
                

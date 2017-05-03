@@ -58,26 +58,36 @@ public class Bodega {
 
  public boolean LlenarBodega(int carga){
             if(this.getCarga()<=2000){
-                System.out.println("Se esta llenando la bodega");
+                System.out.println("Se esta llenando la bodega...");
                 this.setCarga(2000);
             return true;     
     } else {
-            System.out.println("La bodega esta muy llena favor de vaciarla");
+            System.out.println("La bodega esta muy llena favor de vaciarla...");
             return false; 
             }
     }
       
  public boolean VaciarBodega(int carga)  {
      if (this.getCarga()>=2000){
-         System.out.println("Se esta vaciando la bodega");
+         System.out.println("Se esta vaciando la bodega...");
          this.setCarga(0);
          return true;
          
      }else{
-         System.out.println("La bodega esta casi vacia, favor de llenarla."); 
+         System.out.println("La bodega esta casi vacia, favor de llenarla..."); 
          return false;
      }
   }
+  public boolean verificarBodega(int carga)  {
+if (carga<2000 && carga>0 ){
+         System.out.println("Hay carga suficiente en la bodega...");
+         return true;
+     }else{
+         System.out.println("Hay mucha o nada de carga... cambiando... Ya tiene 2000 kg.");
+         this.setCarga(2000);
+         return false;
+     }
+    }
  }
  
  

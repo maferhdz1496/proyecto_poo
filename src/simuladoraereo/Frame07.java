@@ -32,11 +32,11 @@ public class Frame07 extends JFrame{
         JButton button = new JButton();
         button.setText("Siguiente");
         
-        rotacionAspaLabel.setBounds(150,20, 200, 30);
-        rotacionAspaRespuesta.setBounds(200,50,120,30);
+        rotacionAspaLabel.setBounds(100,20, 200, 30);
+        rotacionAspaRespuesta.setBounds(150,50,120,30);
      
 
-        button.setBounds(200, 80, 120, 30);
+        button.setBounds(120, 80, 120, 30);
         
         
         panel.add(rotacionAspaLabel);
@@ -47,7 +47,7 @@ public class Frame07 extends JFrame{
         
         
         frame07.add(panel);
-        frame07.setSize(500,150);
+        frame07.setSize(300,150);
         frame07.setLocationRelativeTo(null);
         frame07.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame07.setVisible(true);
@@ -57,9 +57,12 @@ public class Frame07 extends JFrame{
             public void actionPerformed(ActionEvent e) {
              
                
-               System.out.println("Esta rotando "+ rotacionAspaRespuesta.isSelected());               
+               System.out.println("\nEsta rotando "+ rotacionAspaRespuesta.isSelected());               
                if (rotacionAspaRespuesta.isSelected()){
                   boeing.motor.turbina.aspa.VerificarAspa();
+                  boeing.motor.turbina.aspa.setRota(rotacionAspaRespuesta.isSelected());
+                  }
+               if (rotacionAspaRespuesta.isSelected()==false){
                   boeing.motor.turbina.aspa.setRota(rotacionAspaRespuesta.isSelected());
                   }
               frame07.setVisible(false); 

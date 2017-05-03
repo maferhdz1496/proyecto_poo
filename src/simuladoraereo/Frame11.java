@@ -19,12 +19,12 @@ import javax.swing.JPanel;
  */
 public class Frame11 extends JFrame{
     public Boeing Frame11(Boeing boeing){
-        JFrame frame11 = new JFrame("Aspa");
+        JFrame frame11 = new JFrame("Bano");
         JPanel panel = new JPanel();
         panel.setLayout(null);
         
 
-        JLabel usarbanoLabel = new JLabel("¿Quieres usar el bano?");
+        JLabel usarbanoLabel = new JLabel("¿Esta ocupado el baño?");
         JCheckBox usarBanoRespuesta = new JCheckBox("Si");
         
      
@@ -32,11 +32,11 @@ public class Frame11 extends JFrame{
         JButton button = new JButton();
         button.setText("Siguiente");
         
-        usarbanoLabel.setBounds(150,20, 200, 30);
-        usarBanoRespuesta.setBounds(200,50,120,30);
+        usarbanoLabel.setBounds(100,20, 200, 30);
+        usarBanoRespuesta.setBounds(150,50,120,30);
      
 
-        button.setBounds(200, 80, 120, 30);
+        button.setBounds(100, 80, 120, 30);
         
         
         panel.add(usarbanoLabel);
@@ -47,7 +47,7 @@ public class Frame11 extends JFrame{
         
         
         frame11.add(panel);
-        frame11.setSize(500,150);
+        frame11.setSize(300,150);
         frame11.setLocationRelativeTo(null);
         frame11.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame11.setVisible(true);
@@ -57,9 +57,12 @@ public class Frame11 extends JFrame{
             public void actionPerformed(ActionEvent e) {
              
                
-               System.out.println("Quiere usar el bano "+ usarBanoRespuesta.isSelected());               
+               System.out.println("\nQuiere usar el bano "+ usarBanoRespuesta.isSelected());               
                if (usarBanoRespuesta.isSelected()){
                    boeing.bano.UsarBaño();
+                   boeing.bano.setOcupado(usarBanoRespuesta.isSelected());
+                  }
+               if (usarBanoRespuesta.isSelected()==false){
                    boeing.bano.setOcupado(usarBanoRespuesta.isSelected());
                   }
                

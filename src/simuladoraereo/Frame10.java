@@ -26,7 +26,7 @@ import javax.swing.JTextField;
     public int asientosInt; 
     
     public Boeing Frame10 (Boeing boeing){
-        JFrame frame10 = new JFrame("Bodega");
+        JFrame frame10 = new JFrame("Asientos");
         JPanel panel = new JPanel();
         panel.setLayout(null);
         
@@ -44,15 +44,15 @@ import javax.swing.JTextField;
         button.setText("Siguiente");
         
         pasajerosLabel.setBounds(150,20, 300, 30);
-        pasajerosLabel1.setBounds(150,50, 300, 30);
+        pasajerosLabel1.setBounds(20,50, 600, 30);
         pasajerosRespuesta.setBounds(200, 80, 120, 30);
         asientosLabel.setBounds (150,110,300,30);
-        asientosRespuesta.setBounds (150,140,120,30);
-        subirpasajerosLabel.setBounds(150,170, 300, 30);
+        asientosRespuesta.setBounds (200,140,120,30);
+        subirpasajerosLabel.setBounds(20,170, 600, 30);
         subirPasajerosRespuesta.setBounds(200,200,120,30);
-        bajarPasajerosLabel.setBounds(150, 230, 300, 30);
-        bajarPasajerosRespuesta.setBounds(260, 200, 120, 30);
-        button.setBounds(150, 290, 120, 30);
+        bajarPasajerosLabel.setBounds(20, 230, 600, 30);
+        bajarPasajerosRespuesta.setBounds(200, 260, 120, 30);
+        button.setBounds(170, 290, 120, 30);
         
         
         panel.add(pasajerosLabel);
@@ -79,7 +79,7 @@ import javax.swing.JTextField;
              
                 pasajerosStr = pasajerosRespuesta.getText();
                 pasajerosInt = Integer.parseInt(pasajerosStr);   
-               System.out.println("Son " + pasajerosInt + " pasajeros.");
+               System.out.println("\nSon " + pasajerosInt + " pasajeros.");
                boeing.asientos.VerificarAsientos(pasajerosInt, asientosInt);
                boeing.asientos.setPasajero(pasajerosInt);
              
@@ -91,19 +91,26 @@ import javax.swing.JTextField;
                boeing.asientos.setAsientos(asientosInt);
                
                
-               System.out.println("Subiendo pasajeros "+ subirPasajerosRespuesta.getText() );
+               System.out.println("Subiendo pasajeros "+ subirPasajerosRespuesta.isSelected() );
                if (subirPasajerosRespuesta.isSelected()){
                    boeing.asientos.SubirPasajero(pasajerosInt);
                    boeing.asientos.setPasajero(pasajerosInt);
                    }
+               if (subirPasajerosRespuesta.isSelected()== false){
+                   boeing.asientos.setPasajero(pasajerosInt);
+                   }
 
                
-               System.out.println("Bajando pasajeros " + bajarPasajerosRespuesta.getText());
+               System.out.println("Bajando pasajeros " + bajarPasajerosRespuesta.isSelected());
                if (bajarPasajerosRespuesta.isSelected()){
                    boeing.asientos.BajarPasajero(pasajerosInt);
                    boeing.asientos.setPasajero(pasajerosInt);         
                   }
+               if (bajarPasajerosRespuesta.isSelected()==false){
+                   boeing.asientos.setPasajero(pasajerosInt);         
+                  }
 
+               
                frame10.setVisible(false);
               Frame11 frame11 = new Frame11();
               Boeing boeing = new Boeing();

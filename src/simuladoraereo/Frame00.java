@@ -40,6 +40,8 @@ public class Frame00 extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                setVisible(false);
+            
+              
                Frame01 frame01 = new Frame01();
                Boeing boeing = new Boeing();
                boeing = frame01.Frame01(boeing);
