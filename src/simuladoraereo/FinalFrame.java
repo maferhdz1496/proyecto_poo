@@ -59,6 +59,7 @@ public class FinalFrame extends JFrame{
             public void actionPerformed(ActionEvent e) { 
                
               frame1.setVisible(false);
+              System.exit(0);
             }
         });
   

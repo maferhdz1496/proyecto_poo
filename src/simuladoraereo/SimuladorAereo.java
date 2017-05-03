@@ -28,10 +28,10 @@ public class SimuladorAereo{
         
         System.out.println("\n SIMULACION USANDO SWING..."+
                 " \nIMPRESION DE ATRIBUTOS Y METODOS A ELECION DEL USUARIO EN RUN");
-        System.out.println("\n(Escriba en todos los espacios disponibles ya sea numeros o letras,"
-                + "\n dependiendo de lo que se pida, si no selecciona algo,"
-                + "\n el programa sabra que no quiere hacer cierta accion y actuará "
-                + "\n poniendo false en el Run, si selecciona true, el metodo funcionara acorde"
+        System.out.println("\n(Nota: Escriba en todos los recuadros vacios disponibles ya sea numeros o letras "
+                + "\n lo que se pide. Si en los checkbox no selecciona una opcion,"
+                + "\n el programa sabra que no quiere hacer cierta accion y actuará acode "
+                + "\n poniendo false en el Run. Si selecciona true, el metodo funcionara acorde"
                 + "\n a lo que usted pida).");
     }   
 }

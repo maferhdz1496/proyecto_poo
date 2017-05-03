@@ -92,7 +92,7 @@ public class Frame02 extends JFrame{
                 vidaUtilStr = vidaUtilRespuesta.getText();
                 vidaUtilInt = Integer.parseInt(vidaUtilStr);        
                 boeing.setVidaUtil(vidaUtilInt);
-                System.out.println("Tiene: " + vidaUtilInt + "anos");
+                System.out.println("Tiene: " + vidaUtilInt + " anos");
                 boeing.reparar(vidaUtilInt);
                 
                 anoFabricacionStr= anoFabicacionRespuesta.getText();

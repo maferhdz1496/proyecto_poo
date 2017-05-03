@@ -44,7 +44,7 @@ public class Frame12 extends JFrame{
         JCheckBox apagarRespuesta = new JCheckBox("Si");
 
         JButton button = new JButton();
-        button.setText("Siguiente");
+        button.setText("Ver Resultados");
         
         numSerieLabel.setBounds(150,20, 300, 30);
         numSerieRespuesta.setBounds(200, 50, 120, 30);

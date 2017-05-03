@@ -168,8 +168,8 @@ public class Boeing extends Avion implements InterfazDeVuelo {
   public  boolean reparar(int vidaUtil){
     if( 10 <this.vidaUtil){
              int vidaNueva;
-            vidaNueva = 0;
-            System.out.println("Reparando Areonave" + "La nueva vida util de tu areonave es de..." + vidaNueva);
+            vidaNueva = 10;
+            System.out.println("Reparando areonave..." + "La nueva vida util de tu areonave es de..." + vidaNueva);
             this.setVidaUtil(0);
             return true;
             
