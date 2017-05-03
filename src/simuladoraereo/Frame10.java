@@ -104,7 +104,7 @@ import javax.swing.JTextField;
                    asiento.setPasajero(pasajerosInt);         
                   }
 
-               
+               frame10.setVisible(false);
               Frame11 frame11 = new Frame11();
               
                 

@@ -100,13 +100,14 @@ public class Frame01 extends JFrame{
                System.out.println("El tanque tiene " + gasolina + "lts.");
                tanque.verificarTanque(gasolina);
                tanque.setLitrosGasolina(gasolina);
+               setVisible(false);
                
               Frame02 frame02 = new Frame02();
               
               //DANIEL: me no comprender porque esto no funciona.
               //Areonave areonaveFinal = new Areonave();
               //areonaveFinal = frame02.Frame02(areonave);
-              //frame01.dispose();
+            
                 
             }
         });

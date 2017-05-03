@@ -38,6 +38,10 @@ public class Frame12 extends JFrame{
         JCheckBox aterrizarRespuesta = new JCheckBox("Si");
         JLabel despegarLabel = new JLabel("¿Quieres despegar?");
         JCheckBox despegarRespuesta = new JCheckBox("Si");
+        JLabel encenderLabel = new JLabel("¿Quieres apagar el avion?");
+        JCheckBox encenderRespuesta = new JCheckBox("Si");
+        JLabel apagarLabel = new JLabel("¿Quieres encender el avion?");
+        JCheckBox apagarRespuesta = new JCheckBox("Si");
 
         JButton button = new JButton();
         button.setText("Siguiente");
@@ -51,8 +55,12 @@ public class Frame12 extends JFrame{
         aterrizarLabel.setBounds(150,200, 300, 30);
         aterrizarRespuesta.setBounds(200,230,120,30);
         despegarLabel.setBounds(150, 260, 300, 30);
-        despegarRespuesta.setBounds(290, 200, 120, 30);
-        button.setBounds(150, 320, 120, 30);
+        despegarRespuesta.setBounds(290, 290, 120, 30);
+        encenderLabel.setBounds(150,320, 300, 30);
+        encenderRespuesta.setBounds(200,350,120,30);
+        apagarLabel.setBounds(150, 380, 300, 30);
+        apagarRespuesta.setBounds(290, 410, 120, 30);
+        button.setBounds(150, 440, 120, 30);
         
         
         panel.add(numSerieLabel);
@@ -65,12 +73,16 @@ public class Frame12 extends JFrame{
         panel.add(aterrizarRespuesta);
         panel.add(despegarLabel);
         panel.add(despegarRespuesta);
+        panel.add(encenderLabel);
+        panel.add(encenderRespuesta);
+        panel.add(apagarLabel);
+        panel.add(apagarRespuesta);
         panel.add(button);
         
         
         
         frame12.add(panel);
-        frame12.setSize(500, 350);
+        frame12.setSize(500, 500);
         frame12.setLocationRelativeTo(null);
         frame12.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame12.setVisible(true);
@@ -103,9 +115,22 @@ public class Frame12 extends JFrame{
                    boeing.setEnVuelo(despegarRespuesta.isSelected());       
                   }
 
+               System.out.println("Lo encendio "+ encenderRespuesta.getText());
+               if (encenderRespuesta.isSelected()){
+                   boeing.encender();
+                   boeing.setEnVuelo(encenderRespuesta.isSelected());
+                   }
                
+               System.out.println("Lo apago " + apagarRespuesta.getText());
+               if (apagarRespuesta.isSelected()){
+                   boeing.apagar();
+                   boeing.setEnVuelo(despegarRespuesta.isSelected());       
+                  }
+             
+              frame12.setVisible(false);
               FinalFrame finalframe = new FinalFrame();
               
+            
                 
             }
         });

@@ -93,9 +93,9 @@ import javax.swing.JTextField;
                   }
                
                
+               frame04.setVisible(false);
                
-               
-              Frame06 frame06 = new Frame06();
+              Frame05 frame05 = new Frame05();
               
                 
             }

@@ -120,7 +120,7 @@ public class Frame05 extends JFrame {
                motor.setPotencia(potenciaMotorInt);
                   
                
-               
+              frame05.setVisible(false);
               Frame06 frame06 = new Frame06();
        
             }

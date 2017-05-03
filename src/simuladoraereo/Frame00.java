@@ -39,12 +39,12 @@ public class Frame00 extends JFrame {
     buttonBegin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+               setVisible(false);
                Frame01 frame01 = new Frame01();
                Boeing avionFinal = new Boeing();
                Tanque tanqueFinal = new Tanque();
                tanqueFinal = frame01.Frame01(tanque);
-              
-                
+               
             }
         });
         

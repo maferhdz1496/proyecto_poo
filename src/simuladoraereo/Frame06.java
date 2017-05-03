@@ -74,7 +74,7 @@ public class Frame06 extends JFrame{
                   turbina.setRotando(acelerandoTurbinaRespuesta.isSelected());
                   }
                
-               
+              frame06.setVisible(false); 
               Frame07 frame07 = new Frame07();
            
             }

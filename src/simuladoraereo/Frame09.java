@@ -91,7 +91,7 @@ import javax.swing.JTextField;
                   }
                
                
-               
+               frame09.setVisible(false);
                
               Frame10 frame10 = new Frame10();
               

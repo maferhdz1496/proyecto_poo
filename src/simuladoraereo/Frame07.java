@@ -62,7 +62,7 @@ public class Frame07 extends JFrame{
                   aspa.VerificarAspa();
                   aspa.setRota(rotacionAspaRespuesta.isSelected());
                   }
-               
+              frame07.setVisible(false); 
                
               Frame08 frame08 = new Frame08();
               

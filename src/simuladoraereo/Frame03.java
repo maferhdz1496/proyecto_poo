@@ -60,10 +60,11 @@ public class Frame03 {
         frame03.setLocationRelativeTo(null);
         frame03.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame03.setVisible(true);
+        
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-             
+
                System.out.println("El tren descendio " + ascenderTrenRespuesta.getText()); 
                
                if (ascenderTrenRespuesta.isSelected()){
@@ -76,9 +77,8 @@ public class Frame03 {
                   tren.descenderTren();
                   tren.setTrenAbajo(descenderTrenRespuesta.isSelected());
                   }
-             
-               
-               
+               frame03.setVisible(false);
+
               Frame04 frame04 = new Frame04();
        
                 

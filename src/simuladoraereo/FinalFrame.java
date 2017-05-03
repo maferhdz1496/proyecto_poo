@@ -62,7 +62,7 @@ public class FinalFrame extends JFrame{
                
                
               Frame08 frame08 = new Frame08();
-              
+              frame1.setVisible(false);
             }
         });
   

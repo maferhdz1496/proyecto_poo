@@ -67,7 +67,7 @@ public class Frame08 extends JFrame{
               
                System.out.println("El copiloto es " + copilotoRespuesta.getText());
                avion.setPiloto(pilotoRespuesta.getText());
-               
+              frame08.setVisible(false);
               Frame09 frame09 = new Frame09();
            
             }

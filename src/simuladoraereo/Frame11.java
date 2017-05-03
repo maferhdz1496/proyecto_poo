@@ -63,7 +63,7 @@ public class Frame11 extends JFrame{
                    bano.setOcupado(usarBanoRespuesta.isSelected());
                   }
                
-               
+               frame11.setVisible(false);
               Frame12 frame12 = new Frame12();
               
             }

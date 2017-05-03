@@ -99,9 +99,10 @@ public class Frame02 extends JFrame{
                 anoFabricacionInt = Integer.parseInt(anoFabricacionStr); 
                 areonave.setAnoFabricacion(anoFabricacionInt);
                 System.out.println("El ano de fabricacion es" + anoFabricacionInt);
-               
+              
+              setVisible(false);
               Frame03 frame03 = new Frame03();
-             
+              
                 
             }
         });
