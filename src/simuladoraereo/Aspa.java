@@ -10,12 +10,16 @@ package simuladoraereo;
  * @author maferhernandezdiaz
  */
 public class Aspa {
-    private boolean rota = false;
+    protected boolean rota = false;
 
     public Aspa(boolean rota) {
         this.rota = rota;
     }
-
+    
+    public Aspa() {
+        this.rota = false;
+    }
+    
     public boolean isRota() {
         return rota;
     }
@@ -26,7 +30,7 @@ public class Aspa {
 
     @Override
     public String toString() {
-        return "\n\tAspa" + "\n\tEsta rotando=" + rota;
+        return "\n\tAspa" + "\n\tEsta rotando... " + rota;
     }
     public boolean VerificarAspa()  {
       if(this.rota){

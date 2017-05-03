@@ -10,7 +10,7 @@ package simuladoraereo;
  * @author maferhernandezdiaz
  */
 public interface InterfazDeVuelo {
-    public abstract boolean Subir();
-    public abstract boolean Bajar();
-    public abstract boolean Girar();
+    public abstract boolean subir();
+    public abstract boolean bajar();
+    public abstract boolean girar();
 }

@@ -73,7 +73,7 @@ import javax.swing.JTextField;
                 cargaBodegaStr = cargaBodegaRespuesta.getText();
                 cargaBodegaInt = Integer.parseInt(cargaBodegaStr);   
                System.out.println("La carga es de " + cargaBodegaInt);
-               bodega.VerificarPeso(cargaBodegaInt);
+               bodega.isListo();
                bodega.setCarga(cargaBodegaInt);
   
                

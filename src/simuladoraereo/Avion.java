@@ -9,28 +9,30 @@ package simuladoraereo;
  *
  * @author maferhernandezdiaz
  */
-public class Avion extends Areonave {
+public abstract class Avion extends Areonave {
     protected String piloto;
     protected String copiloto;
     protected Asiento asientos;
-    protected Bodega bodegaCarga;
-    protected Bano banos;
+    protected Bodega bodega;
+    protected Bano bano;
 
     public Avion(String piloto, String copiloto, Asiento asientos, Bodega bodegaCarga, Bano banos, int velocidadMaxima, int vidaUtil, int anoFabricacion, Motor motor, TrenDeAterrisaje tren, String fabricante, Tanque tanque) {
         super(velocidadMaxima, vidaUtil, anoFabricacion, motor, tren, fabricante, tanque);
         this.piloto = piloto;
         this.copiloto = copiloto;
         this.asientos = asientos;
-        this.bodegaCarga = bodegaCarga;
-        this.banos = banos;
+        this.bodega = bodegaCarga;
+        this.bano = banos;
     }
 
     public Avion() {
        super(10000, 10, 2017, new Motor(), new TrenDeAterrisaje(), "F340", new Tanque());
         this.piloto = "Sanchez";
-        this.copiloto = "Heranndez";
+        this.copiloto = "Hernandez";
         this.asientos = new Asiento();
-        this.bodegaCarga = new Bodega();
+        this.bodega = new Bodega();
+        this.bano = new Bano();
+        this.tren = new TrenDeAterrisaje();
         
     
     }
@@ -62,29 +64,35 @@ public class Avion extends Areonave {
     }
 
     public Bodega getBodegaCarga() {
-        return bodegaCarga;
+        return bodega;
     }
 
     public void setBodegaCarga(Bodega bodegaCarga) {
-        this.bodegaCarga = bodegaCarga;
+        this.bodega = bodegaCarga;
     }
 
     public Bano getBanos() {
-        return banos;
+        return bano;
     }
 
     public void setBanos(Bano banos) {
-        this.banos = banos;
+        this.bano = banos;
     }
 
     @Override
     public String toString() {
-        return "\n\tAvion" +
-                "\n\tPiloto= " + piloto +
-                "\n\tCopiloto= " + copiloto + 
-                 asientos + bodegaCarga +
-                "\n\tBanos= " + banos + super.toString();
+        return 
+                "\n\tPiloto: " + piloto +
+                "\n\tCopiloto: " + copiloto + 
+                 bodega + bano + "\n"+ super.toString();
     }
     
-    
+ @Override
+  public abstract boolean apagar();
+
+  @Override
+  public  abstract boolean reparar();
+  
+  @Override
+  public abstract boolean encender();
 }

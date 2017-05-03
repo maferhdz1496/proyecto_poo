@@ -12,6 +12,7 @@ package simuladoraereo;
 public class Asiento {
     protected int asientos;
     protected int pasajero;
+    protected boolean listo = false;
 
 
     public Asiento(int asientos, int pasajero) {
@@ -26,6 +27,24 @@ public class Asiento {
 
     }
 
+     public boolean isListo(){
+        if (VerificarAsientos(pasajero, asientos)){
+            System.out.println("...Pasajeros listos...");
+            listo = true;
+            return true;
+        }
+        else{
+            System.out.println("Verificar pasajeros...");
+            return false;
+        }
+    }
+    
+
+    public void setListo(boolean listo) {
+        this.listo = listo;
+    }
+
+    
     public int getPasajero() {
         return pasajero;
     }
@@ -45,9 +64,9 @@ public class Asiento {
 
     @Override
     public String toString() {
-        return "\n\tAsiento" + 
-                "\n\tAsientos= " + asientos +
-                "\n\tPasajeros= " + pasajero;
+        return 
+                "\n\tAsientos: " + asientos +
+                "\n\tPasajeros: " + pasajero;
     }
     
     public boolean VerificarAsientos(int pasajero, int asientos)  {

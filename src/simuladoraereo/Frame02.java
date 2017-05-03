@@ -93,6 +93,7 @@ public class Frame02 extends JFrame{
                 vidaUtilInt = Integer.parseInt(vidaUtilStr);        
                 areonave.setVidaUtil(vidaUtilInt);
                 System.out.println("Su vida util es" + vidaUtilInt);
+                areonave.reparar();
                 
                 anoFabricacionStr= anoFabicacionRespuesta.getText();
                 anoFabricacionInt = Integer.parseInt(anoFabricacionStr); 

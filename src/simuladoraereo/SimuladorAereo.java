@@ -18,6 +18,12 @@ public class SimuladorAereo{
         mf.setSize(500,300);
         mf.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         mf.setVisible(true);
+        
+        System.out.println("_____________");
+        boeing.despegar();
+        boeing.girar();
+        System.out.println("_____________");
+        System.out.println("INFORMACION DEL AVION");
         System.out.println(boeing.toString());
     }   
 }

@@ -12,6 +12,7 @@ package simuladoraereo;
 public class Tanque {
     private String tipoGasolina;
     private int litrosGasolina;
+    protected boolean listo = false;
 
     public Tanque(String tipoGasolina, int litrosGasolina) {
         this.tipoGasolina = tipoGasolina;
@@ -19,10 +20,29 @@ public class Tanque {
     }
 
     public Tanque() {
-        this.tipoGasolina = "MAGNA";
+        this.tipoGasolina = "AreoGas";
         this.litrosGasolina = 3000;
     }
 
+    public boolean isListo() {
+        if (llenarTanque()){
+            System.out.println("...Tanque listo...");
+            listo = true;
+            return true;
+        }
+        else{
+            System.out.println("Llenar tanque...");
+            return false;
+        }
+    
+    }
+
+    public void setListo(boolean listo) {
+        this.listo = listo;
+    }
+
+    
+    
     public String getTipoGasolina() {
         return tipoGasolina;
     }
@@ -41,36 +61,35 @@ public class Tanque {
 
     @Override
     public String toString() {
-        return "\n\tTanque" +
-                "\n\tTipoGasolina= " + tipoGasolina +
-                "\n\tLitrosGasolina= " + litrosGasolina;
+        return 
+                "\n\tTipoGasolina: " + tipoGasolina +
+                "\n\tLitrosGasolina: " + litrosGasolina;
     }
     
-    public boolean LiberarTanque(){
+    public boolean liberarTanque(){
         if(litrosGasolina<3000 && litrosGasolina>500) {
-         System.out.println("Hay sificiente gasolina");
+         System.out.println("Hay suficiente gasolina");
          return true;
      }else{
-         System.out.println("Vaciando a nivel optimo"); 
-         this.setLitrosGasolina(3000);
+         System.out.println("Vaciando..."); 
+         this.setLitrosGasolina(0);
          return false;
      }
     }
       
-    public boolean VerificarTanque(int litrosGasolina)  {
+    public boolean verificarTanque(int litrosGasolina)  {
 if (litrosGasolina<3000 && litrosGasolina>0 ){
          System.out.println("Hay gasolina en el tanque");
          return true;
      }else{
          System.out.println("No hay gasolina.Favor de llenar el tanque"); 
-         this.setLitrosGasolina(3000);
          return false;
      }
     }
          
  
-    public boolean LlenarTanque()  {
- if(litrosGasolina<0 && litrosGasolina<500) {
+    public boolean llenarTanque()  {
+ if(litrosGasolina>0 && litrosGasolina>500) {
          System.out.println("Hay suficiente gasolina");
          return true;
      }else{

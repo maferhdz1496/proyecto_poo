@@ -10,8 +10,8 @@ package simuladoraereo;
  * @author maferhernandezdiaz
  */
 public abstract class MedioDeTransporte {
-    private String fabricante;
-    private Tanque tanque;
+    protected String fabricante;
+    protected Tanque tanque;
     protected boolean encendido = true;
 
     public MedioDeTransporte(String fabricante, Tanque tanque) {
@@ -20,6 +20,7 @@ public abstract class MedioDeTransporte {
     }
 
     public MedioDeTransporte() {
+        this("Aerofabricantes S.A.",new Tanque());
     }
 
     public String getFabricante() {
@@ -40,14 +41,15 @@ public abstract class MedioDeTransporte {
 
     @Override
     public String toString() {
-        return "\n\tMedioDeTransporte" +
-               "\n\tFabricante= " +fabricante + tanque;
+        return "\nMEDIO DE TRANSPORTE: " + 
+                "\n\tFabricante: " + this.fabricante + "\n" + 
+                "\nTANQUE DE COMBUSTIBLE: " + this.tanque.toString();
     }
     
-  public abstract boolean Encender();
+  public abstract boolean encender();
    
-  public abstract boolean Apagar();
+  public abstract boolean apagar();
       
-  public abstract boolean Reparar();
+  public abstract boolean reparar();
       
 }

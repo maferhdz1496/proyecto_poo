@@ -10,8 +10,8 @@ package simuladoraereo;
  * @author maferhernandezdiaz
  */
 public class Bodega {
-    private int carga;
-    
+    protected int carga;
+    protected boolean listo = false;
 
     public Bodega(int carga) {
         this.carga = carga;
@@ -21,29 +21,48 @@ public class Bodega {
         this.carga = 1000;
     }
 
+    public boolean isListo() {
+        if (LlenarBodega(carga)){
+            System.out.println("...Bodega lista...");
+            listo = true;
+            return true;
+        }
+        else{
+            System.out.println("Llenar bodega...");
+            return false;
+        }
+    }
+   
+
+    public void setListo(boolean listo) {
+        this.listo = listo;
+    }
+    
+
     public int getCarga() {
         return carga;
     }
 
     public void setCarga(int carga) {
         this.carga = carga;
+        
     }
 
 
 
     @Override
     public String toString() {
-        return "\n\tBodega" + 
-               "\n\tLa carga tiene " + carga + "lts." ;
+        return "\nBODEGA DE CARGA:" + 
+               "\n\tLa carga tiene " + carga + "kg." ;
     }
 
  public boolean LlenarBodega(int carga){
-            if(this.getCarga()>=2000){
+            if(this.getCarga()<=2000){
                 System.out.println("Se esta llenando la bodega");
                 this.setCarga(2000);
             return true;     
     } else {
-            System.out.println("La carga esta llena");
+            System.out.println("La bodega esta muy llena favor de vaciarla");
             return false; 
             }
     }
@@ -55,18 +74,7 @@ public class Bodega {
          return true;
          
      }else{
-         System.out.println("Ya estaba vacio"); 
-         return false;
-     }
-  }
- 
- public boolean VerificarPeso(int carga){
-     if (this.getCarga()>=2000){
-         System.out.println("No se puede despegar, cambiar carga");
-         return true;
-         
-     }else{
-         System.out.println("Puede despegar...."); 
+         System.out.println("La bodega esta casi vacia, favor de llenarla."); 
          return false;
      }
   }

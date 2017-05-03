@@ -19,7 +19,7 @@ import javax.swing.JTextField;
  * @author maferhernandezdiaz
  */
 public class Frame01 extends JFrame{
-
+    public Frame02 frame02;
     public String gasStr;
     public int gasolina; 
     
@@ -83,14 +83,14 @@ public class Frame01 extends JFrame{
                
                System.out.println("El tanque lo lleno "+ llenoCheckbox.isSelected());               
                if (llenoCheckbox.isSelected()){
-                  tanque.LlenarTanque();
+                  tanque.llenarTanque();
                   tanque.setLitrosGasolina(gasolina);
                   }
                
                System.out.println("El tanque lo vacio " + vaciarCheckbox.isSelected());
-               tanque.LiberarTanque();
+               tanque.liberarTanque();
                if (vaciarCheckbox.isSelected()){
-                  tanque.LiberarTanque();
+                  tanque.liberarTanque();
                   tanque.setLitrosGasolina(gasolina);
                   }
                
@@ -98,7 +98,7 @@ public class Frame01 extends JFrame{
                gasolina = Integer.parseInt(gasStr);
                tanque.setLitrosGasolina(gasolina);
                System.out.println("El tanque tiene " + gasolina + "lts.");
-               tanque.VerificarTanque(gasolina);
+               tanque.verificarTanque(gasolina);
                tanque.setLitrosGasolina(gasolina);
                
               Frame02 frame02 = new Frame02();

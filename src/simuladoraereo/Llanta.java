@@ -31,12 +31,12 @@ public class Llanta {
     @Override
     public String toString() {
         return "\n\tLlanta" + 
-               "\n\tSu presion es de..." + presion;
+               "\n\tSu presion es de: " + presion;
     }
     
    
    public boolean InflarLlanta(int presion)  {
-     if (presion<200 ){
+     if (presion<0 ){
          System.out.println("Inflando llanta");
          this.setPresion(200);
          return true;
@@ -63,14 +63,13 @@ public class Llanta {
    
   
    public boolean VerificarPresion(int presion)  {
-    if (presion<200 && presion>150 ){
+    if (presion<200 && presion<150 ){
          System.out.println("La llanta esta en niveles optimos");
          return true;
      }else{
          System.out.println("Iflando a nivel optimo"); 
-         this.setPresion(150);
+         this.setPresion(175);
          return false;
-         //Nuevo cambio
      }
      }
    }

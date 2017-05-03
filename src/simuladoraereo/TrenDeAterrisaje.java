@@ -18,7 +18,7 @@ public class TrenDeAterrisaje {
     }
 
     public TrenDeAterrisaje() {
-        this.llanta = new Llanta();
+        this.llanta = new Llanta(100);
     }
 
     public Llanta getLlanta() {
@@ -39,11 +39,12 @@ public class TrenDeAterrisaje {
 
     @Override
     public String toString() {
-        return "\n\tTrenDeAterrisaje" + llanta + 
-                "\n\tEl tren esta abajo..." + trenAbajo;
+        return "\nTREN DE ATERRISAJE:" +
+                 llanta.toString() +
+                "\n\tEl tren esta abajo..." + trenAbajo + "\n";
     }
     
-   public boolean AcenderTren(){
+   public boolean acenderTren(){
        if(this.trenAbajo){
             this.trenAbajo = false;
             System.out.println("Acendiendo el tren");
@@ -56,7 +57,7 @@ public class TrenDeAterrisaje {
         }
 
    }
-    public boolean DescenderTren (){
+    public boolean descenderTren (){
         if(this.trenAbajo){
             this.trenAbajo = false;
             System.out.println("Decendiendo areonave");

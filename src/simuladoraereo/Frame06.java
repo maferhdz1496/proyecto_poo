@@ -63,14 +63,14 @@ public class Frame06 extends JFrame{
                
                System.out.println("Acelarando turbina "+ acelerandoTurbinaRespuesta.isSelected());               
                if (acelerandoTurbinaRespuesta.isSelected()){
-                  turbina.HaceRotacion();
+                  turbina.haceRotacion();
                   turbina.setRotando(acelerandoTurbinaRespuesta.isSelected());
                   }
                
                System.out.println("Desacelerando turbina" + desacelerandoTurbinaRespuesta.isSelected());
        
                if (desacelerandoTurbinaRespuesta.isSelected()){
-                  turbina.DesRotacion();
+                  turbina.desRotacion();
                   turbina.setRotando(acelerandoTurbinaRespuesta.isSelected());
                   }
                

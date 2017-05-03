@@ -109,14 +109,14 @@ public class Frame05 extends JFrame {
                
                 
                System.out.println("Se subio la potencia del motor "+ subirPotenciaMRespuesta.getText());
-               motor.SubirPotencia(potenciaMotorInt);
+               motor.subirPotencia(potenciaMotorInt);
                motor.setPotencia(potenciaMotorInt);
                 
                
                
                
                System.out.println("Se bajo la potencia del motor " + bajarPotenciaMRespuesta.getText());              
-               motor.BajarPotencia(potenciaMotorInt);
+               motor.bajarPotencia(potenciaMotorInt);
                motor.setPotencia(potenciaMotorInt);
                   
                

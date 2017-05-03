@@ -16,22 +16,16 @@ public class Boeing extends Avion implements InterfazDeVuelo {
     private String destino;
     private boolean enVuelo = false;
 
-    public Boeing(String numeroSerie, int numeroVuelo, String destino, String piloto, String copiloto, Asiento asientos, Bodega bodegaCarga, Bano banos, int velocidadMaxima, int vidaUtil, int anoFabricacion, Motor motor, TrenDeAterrisaje tren, String fabricante, Tanque tanque) {
-        super(piloto, copiloto, asientos, bodegaCarga, banos, velocidadMaxima, vidaUtil, anoFabricacion, motor, tren, fabricante, tanque);
+    public Boeing(String numeroSerie, int numeroVuelo, String destino, String piloto, String copiloto, Asiento asientos, Bodega bodega, Bano bano, int velocidadMax, int vidaUtil, int añoFabricacion, Motor motor, TrenDeAterrisaje tren, String fabricante, Tanque tanqueComb) {
+        super(piloto, copiloto, asientos, bodega, bano, velocidadMax, vidaUtil, añoFabricacion, motor, tren, fabricante, tanqueComb);
         this.numeroSerie = numeroSerie;
         this.numeroVuelo = numeroVuelo;
         this.destino = destino;
-  
     }
 
-    public Boeing() {
-        super();
-        this.numeroSerie = "34567";
-        this.numeroVuelo = 345;
-        this.destino = "Hawai";
- 
+    public Boeing(){
+        this("SR24042017",33,"Australia","Carlos Monroy","Mafer Hernandez",new Asiento(),new Bodega(),new Bano(),900,30,2017,new Motor(),new TrenDeAterrisaje(),"NASA",new Tanque());
     }
-
    
 
     public String getNumeroSerie() {
@@ -69,27 +63,29 @@ public class Boeing extends Avion implements InterfazDeVuelo {
 
     @Override
     public String toString() {
-        return "\n\tBoeing787300" +
-                "\n\t Numero de Serie= " + numeroSerie +
-                "\n\t Numero de Vuelo= " + numeroVuelo +
-                "\n\t Destino= " + destino +
-                "\n\t Ya esta en vuelo= " + enVuelo + super.toString();
+        return "BOEING 787 300: " +
+                "\n\tNumeroSerie: " + numeroSerie +
+                "\n\tNumeroVuelo: " + numeroVuelo + 
+                "\n\tDestino: " + destino +
+                "\n\tEsta volando... " + enVuelo +
+                "\n\tPiloto: " + super.piloto + 
+                "\n\tCopiloto: " + super.copiloto +
+                this.asientos.toString() + super.toString();
     }
     
-    public boolean Despegar()  {
-              if(this.enVuelo){
-            this.enVuelo = false;
-            System.out.println("Comeinza a despegar la areonave");
-            return false;
-            
-        } else {
-            this.enVuelo = true;
-            System.out.println("Ya estaba despegando");
+    public boolean despegar()  {
+        if(super.asientos.isListo() && super.motor.isListo() && super.bodega.isListo() && super.tanque.isListo()){
+            System.out.println("DESPEGANDO...");
+            enVuelo = true;
+            return true;
+        }
+        else{
+            System.out.println("VERIFICAR SISTEMAS...");
             return false;
         }
-  }
+    }
       
-    public boolean Aterrizar(){
+    public boolean aterrizar(){
                if(this.enVuelo){
             this.enVuelo = true;
             System.out.println("Aterrizando la areonave");
@@ -102,7 +98,7 @@ public class Boeing extends Avion implements InterfazDeVuelo {
         } 
   }
     @Override
-    public boolean Girar(){
+    public boolean girar(){
       if(this.enVuelo){
             this.enVuelo = true;
             System.out.println("Girando la areonave en vuelo");
@@ -113,32 +109,71 @@ public class Boeing extends Avion implements InterfazDeVuelo {
             return false;
         } 
     }
-    
-     @Override 
-    public boolean Subir(){
+    @Override
+    public boolean subir(){
         if(this.enVuelo){
             this.enVuelo = true;
             System.out.println("Subiendo un poco la areonave");
             return false;
             } else {
             this.enVuelo = false;
-            System.out.println("No esta volando la areonave");
+            System.out.println("Necesitas despegar");
             return false;
         } 
     }
        
-    
-     @Override 
-    public boolean Bajar(){
-if(this.enVuelo){
+    @Override
+    public boolean bajar(){
+        if(this.enVuelo){
             this.enVuelo = true;
             System.out.println("Bajando un poco la areonave");
             return false;
             } else {
             this.enVuelo = false;
-            System.out.println("No esta volando la areonave");
+            System.out.println("Necesitas despegar");
             return false;
         } 
     }
-          
+        
+   @Override  
+  public boolean encender(){
+      if(this.encendido){
+            this.encendido = false;
+            System.out.println("Se enciende la areonave");
+            return true;
+            
+        } else {
+            this.encendido = true;
+            System.out.println("Ya estaba encendido");
+            return false;
+        }
+  }
+  
+   @Override
+  public  boolean apagar(){
+       if(this.encendido){
+            this.encendido = true;
+            System.out.println("Se apaga la areonave");
+            return false;
+            
+        } else {
+            this.encendido = true;
+            System.out.println("Ya estaba apagado");
+            return false;
+        }
+  }
+      
+
+   @Override   
+  public  boolean reparar(){
+    if(this.vidaUtil>10){
+            System.out.println("Reparando Areonave");
+            return true;
+            
+        } else {
+            this.encendido = true;
+            System.out.println("Todavia funciona");
+            return false;
+        }
+  }
 }

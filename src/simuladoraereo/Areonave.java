@@ -9,7 +9,7 @@ package simuladoraereo;
  *
  * @author maferhernandezdiaz
  */
-public class Areonave extends MedioDeTransporte {
+public abstract class Areonave extends MedioDeTransporte {
     protected int velocidadMaxima;
     protected int vidaUtil;
     protected int anoFabricacion;
@@ -76,48 +76,19 @@ public class Areonave extends MedioDeTransporte {
 
     @Override
     public String toString() {
-        return "\n\tAreonave" + 
-                "\n\tVelocidad Maxima= " + velocidadMaxima + 
-                "\n\tVida Util= " + vidaUtil + 
-                "\n\tAno de Fabricacion= " + anoFabricacion + motor +  tren + 
+        return  "\nAREONAVE:" + 
+                "\n\tVelocidad Maxima: " + velocidadMaxima + " km/h" + 
+                "\n\tVida Util: " + vidaUtil + " años" +
+                "\n\tAno de Fabricacion: " + anoFabricacion + motor +  tren + 
                  super.toString();
     }
     
+    @Override
+    public abstract boolean apagar();
     
-    
-    
-  @Override  
-  public boolean Encender(){
-      if(this.encendido){
-            this.encendido = false;
-            System.out.println("Se enciende la areonave");
-            return true;
-            
-        } else {
-            this.encendido = true;
-            System.out.println("Ya estaba encendido");
-            return false;
-        }
-  }
-  
-   @Override
-  public  boolean Apagar(){
-       if(this.encendido){
-            this.encendido = true;
-            System.out.println("Se apaga la areonave");
-            return false;
-            
-        } else {
-            this.encendido = true;
-            System.out.println("Ya estaba apagado");
-            return false;
-        }
-  }
-      
-
-   @Override   
-  public  boolean Reparar(){
-    if(this.vidaUtil>10){
+     @Override
+    public  boolean reparar(){
+         if( 10 <this.vidaUtil){
             System.out.println("Reparando Areonave");
             return true;
             
@@ -126,6 +97,9 @@ public class Areonave extends MedioDeTransporte {
             System.out.println("Todavia funciona");
             return false;
         }
-  }
-      
+    }
+    
+    @Override
+    public abstract boolean encender();
+     
 }

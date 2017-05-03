@@ -11,21 +11,40 @@ package simuladoraereo;
  */
 public class Motor {
     
-   private String marca;
-   private int potencia;
-   private boolean encendidoM = false;
-   private Turbina Turbina;
+   protected String marca;
+   protected int potencia;
+   protected boolean encendidoM = false;
+   protected Turbina turbina;
+   protected boolean listo = false;
 
     public Motor(String marca, int potencia, Turbina Turbina) {
         this.marca = marca;
         this.potencia = potencia;
-        this.Turbina = Turbina;
+        this.turbina = turbina;
     }
 
     public Motor() {
-         this.marca = "Falcon 9000";
+        this.marca = "Falcon 9000";
         this.potencia = 100;
+        this.turbina = new Turbina();
         
+    }
+
+    public boolean isListo() {
+        if (encenderMotor()){
+            System.out.println("...Motor listo...");
+            listo = true;
+            return true;
+        }
+        else{
+            System.out.println("Encender motor...");
+            return false;
+        }
+    }
+   
+
+    public void setListo(boolean listo) {
+        this.listo = listo;
     }
 
     public String getMarca() {
@@ -58,41 +77,47 @@ public class Motor {
     }
 
     public Turbina getTurbina() {
-        return Turbina;
+        return turbina;
     }
 
     public void setTurbina(Turbina Turbina) {
-        this.Turbina = Turbina;
+        this.turbina = Turbina;
     }
 
     @Override
     public String toString() {
-        return "\n\tMotor" +
-                "\n\tMarca= " + marca +
-                "\n\tPotencia= " + potencia +
-                "\n\tEncendido= " + encendidoM +
-                "\n\tTurbina= " + Turbina;
+        return "\nMOTOR: " + 
+                "\n\tMarca: " + marca +
+                "\n\tEsta encendido... " + isEncendidoM() +
+                "\n\tPotencia: " + potencia  +
+                turbina.toString() + "\n";
     }
    
    
    
    
-   public boolean EncenderMotor()  {
-       if(this.encendidoM){
-            this.encendidoM = false;
-            System.out.println("Prendiendo motor");
-            return true;
-            
-        } else {
-            this.encendidoM = true;
-            System.out.println("Ya estaba prendido");
+   public boolean encenderMotor(){
+        if(encendidoM){
+            System.out.println("Motor ya encendido...");
             return false;
-        } 
-  }
+        }
+        else{
+            if(turbina.haceRotacion()){
+            System.out.println("Encendiendo motor...");
+            this.encendidoM = true;
+            return true;
+            }
+            else{
+            System.out.println("Problema con motor...");
+            return false;
+            }
+        }
+    }
   
-   public boolean ApagarMotor()  {
+   public boolean apagarMotor()  {
        if(this.encendidoM){
             this.encendidoM = true;
+            turbina.desRotacion();
             System.out.println("Apagando motor");
             return false;
             
@@ -103,7 +128,7 @@ public class Motor {
         } 
   }
    
-   public boolean SubirPotencia(int potencia)  {
+   public boolean subirPotencia(int potencia)  {
        if(potencia >= 0 && potencia <= 50){
            System.out.println("Subiendo potencia");
             return true;
@@ -114,7 +139,7 @@ public class Motor {
         }
     }
    
-   public boolean BajarPotencia(int potencia)  {
+   public boolean bajarPotencia(int potencia)  {
        if(potencia >= 100 && potencia <= 50){
            System.out.println("Bajando potencia");
            return true;

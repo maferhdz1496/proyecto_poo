@@ -16,6 +16,10 @@ public class Bano{
         this.ocupado = ocupado;
     }
 
+    public Bano() {
+        this.ocupado = false;
+    }
+
     public boolean isOcupado() {
         return ocupado;
     }
@@ -26,8 +30,8 @@ public class Bano{
 
     @Override
     public String toString() {
-        return "\n\tBano" +
-                "\n\tOcupado= " + ocupado;
+        return "\nBAÑO:" +
+                "\n\tEsta ocupado..." + ocupado;
     }
     
    public boolean UsarBaño()  {

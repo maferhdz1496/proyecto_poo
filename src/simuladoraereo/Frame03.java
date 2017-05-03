@@ -67,13 +67,13 @@ public class Frame03 {
                System.out.println("El tren descendio " + ascenderTrenRespuesta.getText()); 
                
                if (ascenderTrenRespuesta.isSelected()){
-                  tren.AcenderTren();
+                  tren.acenderTren();
                   tren.setTrenAbajo(ascenderTrenRespuesta.isSelected());
                   }
                
                System.out.println("El tren ascendio "+ descenderTrenRespuesta.isSelected());
                if (descenderTrenRespuesta.isSelected()){
-                  tren.DescenderTren();
+                  tren.descenderTren();
                   tren.setTrenAbajo(descenderTrenRespuesta.isSelected());
                   }
              

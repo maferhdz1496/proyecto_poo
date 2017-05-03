@@ -17,6 +17,11 @@ public class Turbina {
         this.aspa = aspa;
     }
 
+    public Turbina() {
+        this.aspa = new Aspa();
+    }
+
+    
     public Aspa getAspa() {
         return aspa;
     }
@@ -35,25 +40,23 @@ public class Turbina {
 
     @Override
     public String toString() {
-        return "\n\tTurbina" +
-                "\n\tEl aspa esta bien..." + aspa +
-                "\n\tEsta rotando..." + rotando;
+        return "\nTURBINA: " + 
+                aspa.toString();
     }
    
-    public boolean HaceRotacion()  {
-       if(this.rotando){
-            this.rotando = false;
-            System.out.println("Comenzando a rotar");
-            return true;
-            
-        } else {
-            this.rotando = true;
-            System.out.println("EYa estaba rotando");
+    public boolean haceRotacion()  {
+        if(aspa.isRota()){
+            System.out.println("El aspa rota, no se puede acelerar...");
             return false;
         }
-     }
+        else{
+            System.out.println("Acelerando rotacion...");
+            return true;
+        }
+    }
     
-    public boolean DesRotacion()  {
+    
+    public boolean desRotacion()  {
        if(this.rotando){
             this.rotando = false;
             System.out.println("Deteniendo rotacion");
