@@ -22,7 +22,7 @@ public class Frame05 extends JFrame {
     public String potenciaMotorStr;
     public int potenciaMotorInt;
     
-    public Motor Frame05(Motor motor){
+    public Boeing Frame05(Boeing boeing){
         JFrame frame05 = new JFrame("Motor");
         JPanel panel = new JPanel();
         panel.setLayout(null);
@@ -81,7 +81,7 @@ public class Frame05 extends JFrame {
         
         
         frame05.add(panel);
-        frame05.setSize(500, 400);
+        frame05.setSize(500, 450);
         frame05.setLocationRelativeTo(null);
         frame05.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame05.setVisible(true);
@@ -90,41 +90,43 @@ public class Frame05 extends JFrame {
             public void actionPerformed(ActionEvent e) {
              
                System.out.println("La marca del motor es " + marcaMotorRespuesta.getText()); 
-               motor.setMarca(marcaMotorRespuesta.getText());
+               boeing.motor.setMarca(marcaMotorRespuesta.getText());
                        
                System.out.println("El motor esta apagado "+ apagarMotorRespuesta.isSelected());               
                if (apagarMotorRespuesta.isSelected()){
-                  motor.setEncendidoM(apagarMotorRespuesta.isSelected());
+                  boeing.motor.setEncendidoM(apagarMotorRespuesta.isSelected());
                   }
                
                System.out.println("El motor esta encendido "+ encenderMotorRespuesta.isSelected());               
                if (encenderMotorRespuesta.isSelected()){
-                  motor.setEncendidoM(apagarMotorRespuesta.isSelected());
+                  boeing.motor.setEncendidoM(apagarMotorRespuesta.isSelected());
                   }
                
                 potenciaMotorStr = potenciaMotorRespuesta.getText();
                 potenciaMotorInt = Integer.parseInt(potenciaMotorStr);   
                 System.out.println("La potencia  de llanta es " + potenciaMotorInt);
-                motor.setPotencia(potenciaMotorInt);
+                boeing.motor.setPotencia(potenciaMotorInt);
                
                 
                System.out.println("Se subio la potencia del motor "+ subirPotenciaMRespuesta.getText());
-               motor.subirPotencia(potenciaMotorInt);
-               motor.setPotencia(potenciaMotorInt);
+               boeing.motor.subirPotencia(potenciaMotorInt);
+               boeing.motor.setPotencia(potenciaMotorInt);
                 
                
                
                
                System.out.println("Se bajo la potencia del motor " + bajarPotenciaMRespuesta.getText());              
-               motor.bajarPotencia(potenciaMotorInt);
-               motor.setPotencia(potenciaMotorInt);
+               boeing.motor.bajarPotencia(potenciaMotorInt);
+               boeing.motor.setPotencia(potenciaMotorInt);
                   
                
               frame05.setVisible(false);
               Frame06 frame06 = new Frame06();
+              Boeing boeing = new Boeing();
+              boeing = frame06.Frame06(boeing);
        
             }
         });
-        return motor;
+        return boeing;
     }
 }

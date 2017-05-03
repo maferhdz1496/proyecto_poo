@@ -14,7 +14,7 @@ public class SimuladorAereo{
         // TODO code application logic here
         Boeing boeing = new Boeing ();
         Tanque tanque = new Tanque();
-        Frame00 mf = new Frame00("Simulador Aereo", boeing, tanque);
+        Frame00 mf = new Frame00("Simulador Aereo");
         mf.setSize(500,300);
         mf.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         mf.setVisible(true);

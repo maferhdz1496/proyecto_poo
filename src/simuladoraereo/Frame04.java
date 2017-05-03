@@ -24,7 +24,7 @@ import javax.swing.JTextField;
     public String presionLlantaStr;
     public int presionLlantaInt; 
     
-    public Llanta Frame04(Llanta llanta){
+    public Boeing Frame04(Boeing boeing){
         JFrame frame04 = new JFrame("Llanta");
         JPanel panel = new JPanel();
         panel.setLayout(null);
@@ -48,7 +48,7 @@ import javax.swing.JTextField;
         desinflarLlantaLabel.setBounds(150, 170, 300, 30);
         desinflarLlantaRespuesta.setBounds(200, 200, 120, 30);
 
-        button.setBounds(150, 260, 120, 30);
+        button.setBounds(150, 230, 120, 30);
         
         
         panel.add(presionLlantaLabel);
@@ -75,32 +75,33 @@ import javax.swing.JTextField;
                 presionLlantaStr = presionLlantaRespuesta.getText();
                 presionLlantaInt = Integer.parseInt(presionLlantaStr);   
                System.out.println("La presion de llanta es " + presionLlantaInt);
-               llanta.VerificarPresion(presionLlantaInt);
-               llanta.setPresion(presionLlantaInt);
+               boeing.tren.llanta.VerificarPresion(presionLlantaInt);
+               boeing.tren.llanta.setPresion(presionLlantaInt);
                
                System.out.println("La llanta se inflo "+ inflarLlantaRespuesta.isSelected());
                if (inflarLlantaRespuesta.isSelected()){
-                  llanta.InflarLlanta(presionLlantaInt);
-                  llanta.setPresion(presionLlantaInt);
+                  boeing.tren.llanta.InflarLlanta(presionLlantaInt);
+                  boeing.tren.llanta.setPresion(presionLlantaInt);
                   }
                
                
                
                System.out.println("La llanta se desinflo " + desinflarLlantaRespuesta.isSelected());
                if (desinflarLlantaRespuesta.isSelected()){
-                  llanta.DesinflarLlanta(presionLlantaInt);
-                  llanta.setPresion(presionLlantaInt);
+                  boeing.tren.llanta.DesinflarLlanta(presionLlantaInt);
+                  boeing.tren.llanta.setPresion(presionLlantaInt);
                   }
                
                
                frame04.setVisible(false);
-               
+             
               Frame05 frame05 = new Frame05();
-              
+              Boeing boeing = new Boeing();
+              boeing = frame05.Frame05(boeing);
                 
             }
         });
-        return llanta;
+        return boeing;
 
     }
 }

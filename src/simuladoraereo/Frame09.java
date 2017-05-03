@@ -23,7 +23,7 @@ import javax.swing.JTextField;
     public String cargaBodegaStr;
     public int cargaBodegaInt; 
     
-    public Bodega Frame09 (Bodega bodega){
+    public Boeing Frame09 (Boeing boeing){
         JFrame frame09 = new JFrame("Bodega");
         JPanel panel = new JPanel();
         panel.setLayout(null);
@@ -73,32 +73,33 @@ import javax.swing.JTextField;
                 cargaBodegaStr = cargaBodegaRespuesta.getText();
                 cargaBodegaInt = Integer.parseInt(cargaBodegaStr);   
                System.out.println("La carga es de " + cargaBodegaInt);
-               bodega.isListo();
-               bodega.setCarga(cargaBodegaInt);
+               boeing.bodega.isListo();
+                boeing.bodega.setCarga(cargaBodegaInt);
   
                
                System.out.println("La carga es "+ llenarBodegaRespuesta.getText() );
                if (llenarBodegaRespuesta.isSelected()){
-                   bodega.LlenarBodega(cargaBodegaInt);
-                   bodega.setCarga(cargaBodegaInt);
+                   boeing.bodega.LlenarBodega(cargaBodegaInt);
+                   boeing.bodega.setCarga(cargaBodegaInt);
                    }
 
                
                System.out.println("La llanta se desinflo " + vaciarBodegaRespuesta.getText());
                if (vaciarBodegaRespuesta.isSelected()){
-                  bodega.VaciarBodega(cargaBodegaInt);
-                  bodega.setCarga(cargaBodegaInt);
+                  boeing.bodega.VaciarBodega(cargaBodegaInt);
+                  boeing.bodega.setCarga(cargaBodegaInt);
                   }
                
                
                frame09.setVisible(false);
                
               Frame10 frame10 = new Frame10();
-              
+              Boeing boeing = new Boeing();
+              boeing = frame10.Frame10(boeing);
                 
             }
         });
-        return bodega;
+        return boeing;
 
     }
 }

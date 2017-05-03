@@ -20,7 +20,7 @@ import javax.swing.JPanel;
 public class Frame03 {
     
     
-    public TrenDeAterrisaje Frame03(TrenDeAterrisaje tren){
+    public Boeing Frame03(Boeing boeing){
         JFrame frame03 = new JFrame("Tren de Aterrisaje");
         JPanel panel = new JPanel();
         panel.setLayout(null);
@@ -40,10 +40,10 @@ public class Frame03 {
        
         descenderTrenLabel.setBounds(150,20, 490, 30);
         descenderTrenRespuesta.setBounds(200,50,120,30);
-        acenderTrenLabel.setBounds(150, 130, 490, 30);
+        acenderTrenLabel.setBounds(150, 80, 490, 30);
         ascenderTrenRespuesta.setBounds(200, 110, 120, 30);
      
-        button.setBounds(150, 240, 120, 30);
+        button.setBounds(150, 150, 120, 30);
         
 
         panel.add(descenderTrenLabel);
@@ -56,7 +56,7 @@ public class Frame03 {
         
         
         frame03.add(panel);
-        frame03.setSize(500, 150);
+        frame03.setSize(500, 200);
         frame03.setLocationRelativeTo(null);
         frame03.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame03.setVisible(true);
@@ -68,23 +68,25 @@ public class Frame03 {
                System.out.println("El tren descendio " + ascenderTrenRespuesta.getText()); 
                
                if (ascenderTrenRespuesta.isSelected()){
-                  tren.acenderTren();
-                  tren.setTrenAbajo(ascenderTrenRespuesta.isSelected());
+                  boeing.tren.acenderTren();
+                  boeing.tren.setTrenAbajo(ascenderTrenRespuesta.isSelected());
                   }
                
                System.out.println("El tren ascendio "+ descenderTrenRespuesta.isSelected());
                if (descenderTrenRespuesta.isSelected()){
-                  tren.descenderTren();
-                  tren.setTrenAbajo(descenderTrenRespuesta.isSelected());
+                  boeing.tren.descenderTren();
+                  boeing.tren.setTrenAbajo(descenderTrenRespuesta.isSelected());
                   }
                frame03.setVisible(false);
 
               Frame04 frame04 = new Frame04();
+              Boeing boeing = new Boeing();
+              boeing = frame04.Frame04(boeing);
        
                 
             }
         });
-        return tren;
+        return boeing;
 
     }
 }

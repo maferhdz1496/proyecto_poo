@@ -19,7 +19,7 @@ import javax.swing.JTextField;
  * @author maferhernandezdiaz
  */
 public class Frame06 extends JFrame{
-    public Turbina Frame06(Turbina turbina){
+    public Boeing Frame06(Boeing boeing){
         JFrame frame06 = new JFrame("Turbina");
         JPanel panel = new JPanel();
         panel.setLayout(null);
@@ -63,23 +63,24 @@ public class Frame06 extends JFrame{
                
                System.out.println("Acelarando turbina "+ acelerandoTurbinaRespuesta.isSelected());               
                if (acelerandoTurbinaRespuesta.isSelected()){
-                  turbina.haceRotacion();
-                  turbina.setRotando(acelerandoTurbinaRespuesta.isSelected());
+                  boeing.motor.turbina.haceRotacion();
+                  boeing.motor.turbina.setRotando(acelerandoTurbinaRespuesta.isSelected());
                   }
                
                System.out.println("Desacelerando turbina" + desacelerandoTurbinaRespuesta.isSelected());
        
                if (desacelerandoTurbinaRespuesta.isSelected()){
-                  turbina.desRotacion();
-                  turbina.setRotando(acelerandoTurbinaRespuesta.isSelected());
+                  boeing.motor.turbina.desRotacion();
+                  boeing.motor.turbina.setRotando(acelerandoTurbinaRespuesta.isSelected());
                   }
                
               frame06.setVisible(false); 
               Frame07 frame07 = new Frame07();
-           
+              Boeing boeing = new Boeing();
+              boeing = frame07.Frame07(boeing);
             }
         });
-        return turbina;
+        return boeing;
 
 }   
 }

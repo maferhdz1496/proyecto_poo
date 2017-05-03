@@ -28,7 +28,7 @@ public class Frame02 extends JFrame{
     public String anoFabricacionStr;
     public int anoFabricacionInt;
     
-    public Areonave Frame02(Areonave areonave){
+    public Boeing Frame02(Boeing boeing){
         JFrame frame02 = new JFrame("Areonave");
         JPanel panel = new JPanel();
         panel.setLayout(null);
@@ -48,13 +48,13 @@ public class Frame02 extends JFrame{
         button.setText("Siguiente");
         
         fabricanteLabel.setBounds(100,20, 490, 30);
-        fabricanteRespuesta.setBounds(100, 50, 120, 30);
+        fabricanteRespuesta.setBounds(150, 50, 120, 30);
         VelocidadLabel.setBounds(100,80, 490, 30);
-        velocidadRespuesta.setBounds(100,110,120,30);
-        vidaUtilLabel.setBounds(100, 130, 490, 30);
-        vidaUtilRespuesta.setBounds(100, 150, 120, 30);
-        anoFabricacionLabel.setBounds(100, 170, 490, 30);
-        anoFabicacionRespuesta.setBounds(100, 200, 120, 30);
+        velocidadRespuesta.setBounds(150,110,120,30);
+        vidaUtilLabel.setBounds(150, 130, 490, 30);
+        vidaUtilRespuesta.setBounds(150, 150, 120, 30);
+        anoFabricacionLabel.setBounds(150, 170, 490, 30);
+        anoFabicacionRespuesta.setBounds(150, 200, 120, 30);
         button.setBounds(100, 230, 120, 30);
         
         
@@ -82,31 +82,33 @@ public class Frame02 extends JFrame{
             public void actionPerformed(ActionEvent e) {
              
                System.out.println("El fabricante es " + fabricanteRespuesta.getText()); 
-               areonave.setFabricante(fabricanteRespuesta.getText());          
+               boeing.setFabricante(fabricanteRespuesta.getText());          
              
                 velMaxStr = velocidadRespuesta.getText();
                 velMaxInt = Integer.parseInt(velMaxStr);         
                 System.out.println("La velocidad maxima es " + velMaxInt);
-                areonave.setVelocidadMaxima(velMaxInt);
+                boeing.setVelocidadMaxima(velMaxInt);
                 
                 vidaUtilStr = vidaUtilRespuesta.getText();
                 vidaUtilInt = Integer.parseInt(vidaUtilStr);        
-                areonave.setVidaUtil(vidaUtilInt);
+                boeing.setVidaUtil(vidaUtilInt);
                 System.out.println("Su vida util es" + vidaUtilInt);
-                areonave.reparar();
+                boeing.reparar();
                 
                 anoFabricacionStr= anoFabicacionRespuesta.getText();
                 anoFabricacionInt = Integer.parseInt(anoFabricacionStr); 
-                areonave.setAnoFabricacion(anoFabricacionInt);
+                boeing.setAnoFabricacion(anoFabricacionInt);
                 System.out.println("El ano de fabricacion es" + anoFabricacionInt);
               
-              setVisible(false);
+              frame02.setVisible(false);
               Frame03 frame03 = new Frame03();
+              Boeing boeing = new Boeing();
+              boeing = frame03.Frame03(boeing);
               
                 
             }
         });
-        return areonave;
+        return boeing;
 
     }
 }

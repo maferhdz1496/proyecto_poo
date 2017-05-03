@@ -18,7 +18,7 @@ import javax.swing.JPanel;
  * @author maferhernandezdiaz
  */
 public class Frame11 extends JFrame{
-    public Bano Frame11(Bano bano){
+    public Boeing Frame11(Boeing boeing){
         JFrame frame11 = new JFrame("Aspa");
         JPanel panel = new JPanel();
         panel.setLayout(null);
@@ -59,16 +59,17 @@ public class Frame11 extends JFrame{
                
                System.out.println("Quiere usar el bano "+ usarBanoRespuesta.isSelected());               
                if (usarBanoRespuesta.isSelected()){
-                   bano.UsarBaño();
-                   bano.setOcupado(usarBanoRespuesta.isSelected());
+                   boeing.bano.UsarBaño();
+                   boeing.bano.setOcupado(usarBanoRespuesta.isSelected());
                   }
                
                frame11.setVisible(false);
               Frame12 frame12 = new Frame12();
-              
+              Boeing boeing = new Boeing();
+              boeing = frame12.Frame12(boeing);
             }
         });
-        return bano;
+        return boeing;
 
 }   
 }

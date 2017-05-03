@@ -129,8 +129,8 @@ public class Frame12 extends JFrame{
              
               frame12.setVisible(false);
               FinalFrame finalframe = new FinalFrame();
-              
-            
+              Boeing boeing = new Boeing();
+              boeing = finalframe.Frame1(boeing);
                 
             }
         });

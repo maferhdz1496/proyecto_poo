@@ -23,7 +23,7 @@ public class Frame01 extends JFrame{
     public String gasStr;
     public int gasolina; 
     
-    public Tanque Frame01(Tanque tanque){
+    public Boeing Frame01(Boeing boeing){
         JFrame frame01 = new JFrame("Tanque");
         JPanel panel = new JPanel();
         panel.setLayout(null);
@@ -78,40 +78,40 @@ public class Frame01 extends JFrame{
             public void actionPerformed(ActionEvent e) {
              
                System.out.println("El tipo de gasolina es " + tanqueRespuesta.getText()); 
-               tanque.setTipoGasolina(tanqueRespuesta.getText());
+               boeing.tanque.setTipoGasolina(tanqueRespuesta.getText());
+
                
                
                System.out.println("El tanque lo lleno "+ llenoCheckbox.isSelected());               
                if (llenoCheckbox.isSelected()){
-                  tanque.llenarTanque();
-                  tanque.setLitrosGasolina(gasolina);
+                  boeing.tanque.llenarTanque();
+                  boeing.tanque.setLitrosGasolina(gasolina);
                   }
                
                System.out.println("El tanque lo vacio " + vaciarCheckbox.isSelected());
-               tanque.liberarTanque();
+               boeing.tanque.liberarTanque();
                if (vaciarCheckbox.isSelected()){
-                  tanque.liberarTanque();
-                  tanque.setLitrosGasolina(gasolina);
+                  boeing.tanque.liberarTanque();
+                  boeing.tanque.setLitrosGasolina(gasolina);
                   }
                
                gasStr = verificarRespuesta.getText();
                gasolina = Integer.parseInt(gasStr);
-               tanque.setLitrosGasolina(gasolina);
+               boeing.tanque.setLitrosGasolina(gasolina);
                System.out.println("El tanque tiene " + gasolina + "lts.");
-               tanque.verificarTanque(gasolina);
-               tanque.setLitrosGasolina(gasolina);
-               setVisible(false);
+               boeing.tanque.verificarTanque(gasolina);
+               boeing.tanque.setLitrosGasolina(gasolina);
+               frame01.setVisible(false);
                
               Frame02 frame02 = new Frame02();
-              
-              //DANIEL: me no comprender porque esto no funciona.
-              //Areonave areonaveFinal = new Areonave();
-              //areonaveFinal = frame02.Frame02(areonave);
+              Boeing boeing = new Boeing();
+              boeing = frame02.Frame02(boeing);
+           
             
                 
             }
         });
-        return tanque;
+        return boeing;
 
     }
     

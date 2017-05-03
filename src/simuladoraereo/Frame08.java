@@ -23,7 +23,7 @@ public class Frame08 extends JFrame{
     public String gasStr;
     public int gasolina; 
     
-    public Avion Frame08(Avion avion){
+    public Boeing Frame08(Boeing boeing){
         JFrame frame08 = new JFrame("Avion");
         JPanel panel = new JPanel();
         panel.setLayout(null);
@@ -54,7 +54,7 @@ public class Frame08 extends JFrame{
         
         
         frame08.add(panel);
-        frame08.setSize(500, 400);
+        frame08.setSize(500,200);
         frame08.setLocationRelativeTo(null);
         frame08.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame08.setVisible(true);
@@ -63,16 +63,18 @@ public class Frame08 extends JFrame{
             public void actionPerformed(ActionEvent e) {
              
                System.out.println("El piloto es " + pilotoRespuesta.getText()); 
-               avion.setPiloto(pilotoRespuesta.getText());
+               boeing.setPiloto(pilotoRespuesta.getText());
               
                System.out.println("El copiloto es " + copilotoRespuesta.getText());
-               avion.setPiloto(pilotoRespuesta.getText());
+               boeing.setPiloto(pilotoRespuesta.getText());
               frame08.setVisible(false);
               Frame09 frame09 = new Frame09();
+              Boeing boeing = new Boeing();
+              boeing = frame09.Frame09(boeing);
            
             }
         });
-        return avion;
+        return boeing;
 
     }
     

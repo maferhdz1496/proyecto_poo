@@ -10,8 +10,8 @@ package simuladoraereo;
  * @author maferhernandezdiaz
  */
 public class Turbina {
-    private Aspa aspa;
-    private boolean rotando = false;
+    protected Aspa aspa;
+    protected boolean rotando = false;
 
     public Turbina(Aspa aspa) {
         this.aspa = aspa;

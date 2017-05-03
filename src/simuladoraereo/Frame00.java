@@ -19,7 +19,7 @@ import javax.swing.JLabel;
  * @author maferhernandezdiaz
  */
 public class Frame00 extends JFrame {
-    public Frame00(String title, Boeing avion, Tanque tanque){
+    public Frame00(String title){
         super (title);
     
     setLayout(new BorderLayout());
@@ -41,9 +41,8 @@ public class Frame00 extends JFrame {
             public void actionPerformed(ActionEvent e) {
                setVisible(false);
                Frame01 frame01 = new Frame01();
-               Boeing avionFinal = new Boeing();
-               Tanque tanqueFinal = new Tanque();
-               tanqueFinal = frame01.Frame01(tanque);
+               Boeing boeing = new Boeing();
+               boeing = frame01.Frame01(boeing);
                
             }
         });

@@ -25,7 +25,7 @@ import javax.swing.JTextField;
     public String asientosStr;
     public int asientosInt; 
     
-    public Asiento Frame10 (Asiento asiento){
+    public Boeing Frame10 (Boeing boeing){
         JFrame frame10 = new JFrame("Bodega");
         JPanel panel = new JPanel();
         panel.setLayout(null);
@@ -80,37 +80,39 @@ import javax.swing.JTextField;
                 pasajerosStr = pasajerosRespuesta.getText();
                 pasajerosInt = Integer.parseInt(pasajerosStr);   
                System.out.println("Son " + pasajerosInt + " pasajeros.");
-               asiento.VerificarAsientos(pasajerosInt, asientosInt);
-               asiento.setPasajero(pasajerosInt);
+               boeing.asientos.VerificarAsientos(pasajerosInt, asientosInt);
+               boeing.asientos.setPasajero(pasajerosInt);
              
   
                asientosStr = pasajerosRespuesta.getText();
                asientosInt = Integer.parseInt(asientosStr);   
                System.out.println("Son " + asientosInt + " asientos.");
-               asiento.VerificarAsientos(pasajerosInt, asientosInt);
-               asiento.setAsientos(asientosInt);
+               boeing.asientos.VerificarAsientos(pasajerosInt, asientosInt);
+               boeing.asientos.setAsientos(asientosInt);
                
                
                System.out.println("Subiendo pasajeros "+ subirPasajerosRespuesta.getText() );
                if (subirPasajerosRespuesta.isSelected()){
-                   asiento.SubirPasajero(pasajerosInt);
-                   asiento.setPasajero(pasajerosInt);
+                   boeing.asientos.SubirPasajero(pasajerosInt);
+                   boeing.asientos.setPasajero(pasajerosInt);
                    }
 
                
                System.out.println("Bajando pasajeros " + bajarPasajerosRespuesta.getText());
                if (bajarPasajerosRespuesta.isSelected()){
-                   asiento.BajarPasajero(pasajerosInt);
-                   asiento.setPasajero(pasajerosInt);         
+                   boeing.asientos.BajarPasajero(pasajerosInt);
+                   boeing.asientos.setPasajero(pasajerosInt);         
                   }
 
                frame10.setVisible(false);
               Frame11 frame11 = new Frame11();
+              Boeing boeing = new Boeing();
+              boeing = frame11.Frame11(boeing);
               
                 
             }
         });
-        return asiento;
+        return boeing;
 
     }
 }

@@ -18,7 +18,7 @@ import javax.swing.JPanel;
  * @author maferhernandezdiaz
  */
 public class Frame07 extends JFrame{
-    public Aspa Frame07(Aspa aspa){
+    public Boeing Frame07(Boeing boeing){
         JFrame frame07 = new JFrame("Aspa");
         JPanel panel = new JPanel();
         panel.setLayout(null);
@@ -59,16 +59,17 @@ public class Frame07 extends JFrame{
                
                System.out.println("Esta rotando "+ rotacionAspaRespuesta.isSelected());               
                if (rotacionAspaRespuesta.isSelected()){
-                  aspa.VerificarAspa();
-                  aspa.setRota(rotacionAspaRespuesta.isSelected());
+                  boeing.motor.turbina.aspa.VerificarAspa();
+                  boeing.motor.turbina.aspa.setRota(rotacionAspaRespuesta.isSelected());
                   }
               frame07.setVisible(false); 
                
               Frame08 frame08 = new Frame08();
-              
+              Boeing boeing = new Boeing();
+              boeing = frame08.Frame08(boeing);
             }
         });
-        return aspa;
+        return boeing;
 
 }   
 }
