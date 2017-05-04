@@ -22,7 +22,7 @@ public class Bodega {
     }
 
     public boolean isListo() {
-        if (LlenarBodega(carga)){
+        if (llenarBodega(carga)){
             System.out.println("...Bodega lista...");
             listo = true;
             return true;
@@ -56,7 +56,7 @@ public class Bodega {
                "\n\tLa carga tiene " + carga + "kg." ;
     }
 
- public boolean LlenarBodega(int carga){
+ public boolean llenarBodega(int carga){
             if(this.getCarga()<=2000){
                 System.out.println("Se esta llenando la bodega...");
                 this.setCarga(2000);
@@ -67,7 +67,7 @@ public class Bodega {
             }
     }
       
- public boolean VaciarBodega(int carga)  {
+ public boolean vaciarBodega(int carga)  {
      if (this.getCarga()>=2000){
          System.out.println("Se esta vaciando la bodega...");
          this.setCarga(0);

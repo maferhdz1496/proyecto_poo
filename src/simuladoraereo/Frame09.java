@@ -79,7 +79,7 @@ import javax.swing.JTextField;
                
                System.out.println("La carga esta llena "+ llenarBodegaRespuesta.getText() );
                if (llenarBodegaRespuesta.isSelected()){
-                   boeing.bodega.LlenarBodega(cargaBodegaInt);
+                   boeing.bodega.llenarBodega(cargaBodegaInt);
                    boeing.bodega.setCarga(cargaBodegaInt);
                    }
 
@@ -89,7 +89,7 @@ import javax.swing.JTextField;
                
                System.out.println("La carga esta vacia " + vaciarBodegaRespuesta.getText());
                if (vaciarBodegaRespuesta.isSelected()){
-                  boeing.bodega.VaciarBodega(cargaBodegaInt);
+                  boeing.bodega.vaciarBodega(cargaBodegaInt);
                   boeing.bodega.setCarga(cargaBodegaInt);
                   }
                 if (vaciarBodegaRespuesta.isSelected()== false){

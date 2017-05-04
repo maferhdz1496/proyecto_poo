@@ -9,21 +9,23 @@ package simuladoraereo;
  *
  * @author maferhernandezdiaz
  */
-public class Tanque {
-    private String tipoGasolina;
-    private int litrosGasolina;
+public class Tanque extends Contenedor {
+    protected String tipoGasolina;
+    protected int litrosGasolina;
     protected boolean listo = false;
 
-    public Tanque(String tipoGasolina, int litrosGasolina) {
+    public Tanque(String tipoGasolina, int litrosGasolina, String color, String tamano) {
+        super(color, tamano);
         this.tipoGasolina = tipoGasolina;
         this.litrosGasolina = litrosGasolina;
     }
 
     public Tanque() {
-        this.tipoGasolina = "AreoGas";
-        this.litrosGasolina = 3000;
+        super("rojo", "grande");
+        this.tipoGasolina = "Turbigas";
+        this.litrosGasolina = 1000;
     }
-
+   
     public boolean isListo() {
         if (llenarTanque()){
             System.out.println("...Tanque listo...");
@@ -63,7 +65,7 @@ public class Tanque {
     public String toString() {
         return 
                 "\n\tTipoGasolina: " + tipoGasolina +
-                "\n\tLitrosGasolina: " + litrosGasolina;
+                "\n\tLitrosGasolina: " + litrosGasolina + super.toString();
     }
     
     public boolean liberarTanque(){
@@ -100,4 +102,5 @@ if (litrosGasolina<3000 && litrosGasolina>0 ){
      }
     }
 }
+
 

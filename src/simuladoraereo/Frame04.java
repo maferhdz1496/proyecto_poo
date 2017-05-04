@@ -75,12 +75,12 @@ import javax.swing.JTextField;
                 presionLlantaStr = presionLlantaRespuesta.getText();
                 presionLlantaInt = Integer.parseInt(presionLlantaStr);   
                System.out.println("\nLa presion de llanta es " + presionLlantaInt);
-               boeing.tren.llanta.VerificarPresion(presionLlantaInt);
+               boeing.tren.llanta.verificarPresion(presionLlantaInt);
                boeing.tren.llanta.setPresion(presionLlantaInt);
                
                System.out.println("La llanta se inflo "+ inflarLlantaRespuesta.isSelected());
                if (inflarLlantaRespuesta.isSelected()){
-                  boeing.tren.llanta.InflarLlanta(presionLlantaInt);
+                  boeing.tren.llanta.inflarLlanta(presionLlantaInt);
                   boeing.tren.llanta.setPresion(presionLlantaInt);
                   }
                
@@ -88,7 +88,7 @@ import javax.swing.JTextField;
                
                System.out.println("La llanta se desinflo " + desinflarLlantaRespuesta.isSelected());
                if (desinflarLlantaRespuesta.isSelected()){
-                  boeing.tren.llanta.DesinflarLlanta(presionLlantaInt);
+                  boeing.tren.llanta.desinflarLlanta(presionLlantaInt);
                   boeing.tren.llanta.setPresion(presionLlantaInt);
                   }
                

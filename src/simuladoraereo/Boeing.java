@@ -54,7 +54,18 @@ public class Boeing extends Avion implements InterfazDeVuelo {
 
 
     public boolean isEnVuelo() {
-        return enVuelo;
+         if (cerrarPuerta()){
+             this.enVuelo = true;
+            System.out.println("...Puerta lista...");
+            enVuelo = true;
+            return true;
+        }
+        else{
+             this.enVuelo = false;
+            System.out.println("Cerrar puertas...");
+            return false;
+        }
+   
     }
 
     public void setEnVuelo(boolean enVuelo) {
@@ -74,7 +85,7 @@ public class Boeing extends Avion implements InterfazDeVuelo {
     }
     
     public boolean despegar()  {
-        if(super.asientos.isListo() && super.motor.isListo() && super.bodega.isListo() && super.tanque.isListo()){
+        if(super.asientos.isListo() && super.motor.isListo() && super.bodega.isListo() && super.tanque.isListo() && isEnVuelo()){
             System.out.println("DESPEGANDO...");
             enVuelo = true;
             return true;
@@ -179,4 +190,48 @@ public class Boeing extends Avion implements InterfazDeVuelo {
             return false;
         }
     }
+  
+    @Override
+    public  boolean abrirPuerta(){
+        if(this.enVuelo){
+            this.enVuelo = false;
+            System.out.println("Abriendo puertas...");
+            return true;
+            
+        } else {
+            this.enVuelo = true;
+            System.out.println("El avion esta volando no se pueden abrir....");
+            return false;
+        } 
+    }
+    
+    @Override
+    public  boolean cerrarPuerta(){
+        if(this.enVuelo){
+            this.enVuelo = true;
+            System.out.println("Ya estaban cerradas");
+            return false;
+            
+        } else {
+            this.enVuelo = false;
+            System.out.println("Cerrando puertas para el despegue....");
+            return true;
+        } 
+    
+    }
+    
+    @Override
+    public boolean verificarPuerta(){
+        if(this.enVuelo){
+            this.enVuelo = true;
+            System.out.println("Las puertas estan cerradas");
+            return false;
+            
+        } else {
+            this.enVuelo = false;
+            System.out.println("Las puertas se pueden abrir si desea....");
+            return true;
+        } 
+    }
+    
 }

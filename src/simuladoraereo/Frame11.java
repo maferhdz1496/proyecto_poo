@@ -59,7 +59,7 @@ public class Frame11 extends JFrame{
                
                System.out.println("\nQuiere usar el bano "+ usarBanoRespuesta.isSelected());               
                if (usarBanoRespuesta.isSelected()){
-                   boeing.bano.UsarBaño();
+                   boeing.bano.usarBaño();
                    boeing.bano.setOcupado(usarBanoRespuesta.isSelected());
                   }
                if (usarBanoRespuesta.isSelected()==false){

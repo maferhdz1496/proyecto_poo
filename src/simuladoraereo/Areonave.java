@@ -16,6 +16,7 @@ public abstract class Areonave extends MedioDeTransporte {
     protected Motor motor;
     protected TrenDeAterrisaje tren;
 
+
     public Areonave(int velocidadMaxima, int vidaUtil, int anoFabricacion, Motor motor, TrenDeAterrisaje tren, String fabricante, Tanque tanque) {
         super(fabricante, tanque);
         this.velocidadMaxima = velocidadMaxima;
@@ -23,7 +24,10 @@ public abstract class Areonave extends MedioDeTransporte {
         this.anoFabricacion = anoFabricacion;
         this.motor = motor;
         this.tren = tren;
+
     }
+
+   
 
     public Areonave() {
         super("AreoMex", new Tanque());
@@ -32,6 +36,7 @@ public abstract class Areonave extends MedioDeTransporte {
         this.anoFabricacion = 2017;
         this.motor = new Motor();
         this.tren = new TrenDeAterrisaje();
+
     }
 
     public int getVelocidadMaxima() {
@@ -83,11 +88,6 @@ public abstract class Areonave extends MedioDeTransporte {
                  super.toString();
     }
     
-    @Override
-    public abstract boolean apagar();
-     @Override
-    public  abstract boolean reparar(int vidaUtil);
-    @Override
-    public abstract boolean encender();
+   
      
 }

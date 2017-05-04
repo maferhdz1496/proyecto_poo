@@ -34,7 +34,7 @@ public class Bano{
                 "\n\tEsta ocupado..." + ocupado;
     }
     
-   public boolean UsarBaño()  {
+   public boolean usarBaño()  {
       if(this.ocupado){
             this.ocupado = false;
             System.out.println("Puede usar el baño...");

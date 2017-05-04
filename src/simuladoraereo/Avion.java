@@ -87,12 +87,8 @@ public abstract class Avion extends Areonave {
                  bodega + bano + "\n"+ super.toString();
     }
     
- @Override
-  public abstract boolean apagar();
-
-  @Override
-  public  abstract boolean reparar(int vidaUtil);
-  
-  @Override
-  public abstract boolean encender();
-}
+    
+    public abstract boolean abrirPuerta();
+    public abstract boolean cerrarPuerta();
+    public abstract boolean verificarPuerta();
+ }
